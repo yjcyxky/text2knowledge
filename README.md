@@ -69,7 +69,7 @@ http://127.0.0.1:11434/api/tags
 
 
 ## Text to Knolwedge Graph
-### Strategy 1: Employ the LLM to extract entities and relations directly
+### Strategy 1: Employ a LLM to extract entities and relations directly
 
 Please refer to [Prompts](./text2knowledge/prompt_template.py) for more details.
 
@@ -94,7 +94,7 @@ python3 text2knowledge.py extract-relationships-1 --text-file examples/abstract.
 - [ ] How to align all entities to the ontology items? Such as `Hepatocellular carcinoma` --> `MONDO:0007256`. You can access the [BioPortal](https://bioportal.bioontology.org/) for learning more about the ontology items.
 
 
-### Strategy 2: Employ the LLM ask choice questions to extract entities and relations
+### Strategy 2: Employ a LLM to extract entities and relations by asking choice questions
 
 #### Introduction
 
