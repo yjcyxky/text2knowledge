@@ -51,8 +51,48 @@ examples/extracted_pdfs/16451124
     |   |-- 16451124.json           # Abstract and body text, same as 16451124.json, just for convenience
 ```
 
+## Launch a Chatbot Server for Text2Knowledge
+
+Read the [README.md](chatbot/README.md) in the `chatbot` folder for more detail [Not Ready Yet]. So you can use another open source project [Ollama](https://ollama.ai/) or [Ollama Github](https://github.com/jmorganca/ollama) instead of our chatbot.
+
+After you install the Ollama, you can run the following command to launch the Ollama server.
+
+```bash
+ollama pull mistral-openorca:latest
+
+ollama serve
+```
+
+After you launch the Ollama server, you can open the following link in your browser to show all the availabel models.
+
+http://127.0.0.1:11434/api/tags
+
+
 ## Text to Knolwedge Graph
 ### Strategy 1: Employ the LLM to extract entities and relations directly
+
+Please refer to [Prompts](./text2knowledge/prompt_template.py) for more details.
+
+If you want to extract all entities from the text, you can use the following command.
+
+```bash
+python3 text2knowledge.py extract-entities --text-file examples/abstract.txt --output-file test.json --model-name mistral:latest
+```
+
+If you want to extract all relations from the text, you can use the following command.
+
+```bash
+python3 text2knowledge.py extract-relationships-1 --text-file examples/abstract.txt --output-file test.json --model-name mistral:latest
+```
+
+#### Issues
+
+[]- How to improve the accuracy of the entity extraction?
+
+[]- How to align the entities and relations? In current version, we extract entities and relations separately.
+
+[]- How to align all entities to the ontology items? Such as `Hepatocellular carcinoma` --> `MONDO:0007256`. You can access the [BioPortal](https://bioportal.bioontology.org/) for learning more about the ontology items.
+
 
 ### Strategy 2: Employ the LLM ask choice questions to extract entities and relations
 
@@ -73,11 +113,6 @@ A new solution to convert text to knowledge graph
 2. Select the most suitable similarity algorithm
 3. Select a suitable re-ranking algorithm
 4. Improve the prompts for generating questions based on the characteristics of the large language model
-
-
-## Chatbot
-
-Read the [README.md](chatbot/README.md) in the `chatbot` folder for more details.
 
 ## Contribution Guidelines
 

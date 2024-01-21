@@ -4,3 +4,4 @@ torch==2.1.2
 transformers==4.29.2
 transformers-embedder==3.0.11
 git+https://github.com/titipata/scipdf_parser
+ollama

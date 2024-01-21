@@ -1,92 +1,110 @@
 import click
 import time
 import os
-from pathlib import Path
-from dataclasses import dataclass
-from typing import List, Dict
-from text2knowledge.utils import Score, batch_similarity, get_topk_items, load_model, load_tokenizer, gen_word_embedding, get_valid_entities
+import json
+from text2knowledge.utils import get_valid_entities
 from text2knowledge.pdf import list_pdfs, extract_fulltext, extract_figures
-
-
-def gen_text_template(input_text: str) -> str:
-    return f"""Find all biomedical items from the following text:
-
-{input_text}
-"""
-
-
-@dataclass
-class Question:
-    question: str
-    answer: str
-
-
-def gen_question_template(source_item: str, target_item: str) -> str:
-    return f"""Is there any relationship between "{source_item}" and "{target_item}"?"""
-
-
-answers = [
-    "A. associated_with",
-    "B. upregulated_in",
-    "C. downregulated_in",
-    "D. activated_by",
-    "E. inhibited_by",
-    "F. reduced_by",
-    "G. increased_by",
-    "H. alleviated_by",
-    "I. induced_by",
-    "J. No relationship",
-]
-
-
-# Pick up two items by random from the list of items and generate all possible questions, but the order of the items is no matter here.
-def gen_all_questions(items: List[str]) -> List[Question]:
-    questions = []
-    for i in range(len(items)):
-        for j in range(i + 1, len(items)):
-            source_item = items[i]
-            target_item = items[j]
-            questions.append(
-                Question(
-                    question=gen_question_template(source_item, target_item),
-                    answer="\n".join(answers),
-                )
-            )
-    return questions
-
-
-def gen_answer_question_template(questions: List[Question], input_text: str) -> str:
-    formatted_questions = [
-        f"{i+1}. {q.question}\n{q.answer}" for i, q in enumerate(questions)
-    ]
-    formatted_question_str = "\n\n".join(formatted_questions)
-    return f"""Please use the following text as the context information and answer the questions step by step:
-
-{input_text}
-
-{formatted_question_str}
-"""
+from text2knowledge.strategy1 import extract_concepts, graph_prompt
+from text2knowledge.strategy2 import gen_text_template, gen_all_questions, gen_answer_question_template
 
 
 cli = click.Group()
 
 
-@cli.command(help="Generate prompt text for finding biomedical entities.")
+@cli.command(help="Extract biomedical entities from a given text.")
 @click.option(
-    "--abstract-file",
+    "--text-file",
     "-i",
-    help="Abstract file.",
+    help="Text file.",
     required=True,
     type=click.Path(exists=True, file_okay=True, dir_okay=False),
 )
-def find_entity(abstract_file: str):
-    with open(abstract_file, "r") as f:
+@click.option(
+    "--output-file",
+    "-o",
+    help="Output file.",
+    required=True,
+    type=click.Path(exists=False, file_okay=True, dir_okay=False),
+)
+@click.option(
+    "--model-name",
+    "-m",
+    help="Model name. You can use any model which supported by ollama.ai. If you don't know which models are available, you can use the command `ollama list` to list all installed models or visit https://ollama.ai/library. Default: mistral-openorca:latest",
+    default="mistral-openorca:latest",
+)
+@click.option(
+    "--metadata",
+    "-d",
+    type=click.Path(exists=False, file_okay=False, dir_okay=False),
+    help="A metadata file which contains a json object. Such as {'source': 'pubmed', 'pmid': '123456', 'type': 'abstract', ...}, you can specify any key-value pairs you want.",
+)
+def extract_entities(text_file: str, output_file: str, model_name: str, metadata: str):
+    if metadata and os.path.exists(metadata):
+        with open(metadata, "r") as f:
+            metadata = f.read()
+    else:
+        metadata = {}
+
+    with open(text_file, "r") as f:
         abstract = f.read()
-        print(gen_text_template(abstract))
+        entities = extract_concepts(abstract, model=model_name, metadata=metadata)
+
+    if entities:
+        with open(output_file, "w") as f:
+            entities_str = json.dumps(entities, indent=4)
+            f.write(entities_str)
+    else:
+        print("No entities found.")
+
+
+@cli.command(help="Extract relationships between biomedical entities from a given text using strategy 1.")
+@click.option(
+    "--text-file",
+    "-a",
+    help="Text file which contains a paragraph.",
+    required=True,
+    type=click.Path(exists=True, file_okay=True, dir_okay=False),
+)
+@click.option(
+    "--output-file",
+    "-o",
+    help="Output file.",
+    required=True,
+    type=click.Path(exists=False, file_okay=True, dir_okay=False),
+)
+@click.option(
+    "--model-name",
+    "-m",
+    help="Model name. You can use any model which supported by ollama.ai. If you don't know which models are available, you can use the command `ollama list` to list all installed models or visit https://ollama.ai/library. Default: mistral-openorca:latest",
+    default="mistral-openorca:latest",
+)
+@click.option(
+    "--metadata",
+    "-d",
+    type=click.Path(exists=False, file_okay=False, dir_okay=False),
+    help="A metadata file which contains a json object. Such as {'source': 'pubmed', 'pmid': '123456', 'type': 'abstract', ...}, you can specify any key-value pairs you want.",
+)
+def extract_relationships_1(text_file: str, model_name: str, metadata: str, output_file: str):
+    if metadata and os.path.exists(metadata):
+        with open(metadata, "r") as f:
+            metadata = f.read()
+    else:
+        metadata = {}
+
+    with open(text_file, "r") as f:
+        text = f.read()
+        relations = graph_prompt(text, model=model_name, metadata=metadata)
+
+    if relations:
+        with open(output_file, "w") as f:
+            relations_str = json.dumps(relations, indent=4)
+            f.write(relations_str)
+    else:
+        print("No relations found.")
 
 
 @cli.command(
-    help="Generate prompt text for finding relationships between biomedical entities."
+    help="Extract relationships between biomedical entities from a given abstract using strategy 2."
 )
 @click.option(
     "--abstract-file",
@@ -102,7 +120,7 @@ def find_entity(abstract_file: str):
     required=True,
     type=click.Path(exists=True, file_okay=True, dir_okay=False),
 )
-def find_relationship(input_file: str, abstract_file: str):
+def extract_relationships_2(input_file: str, abstract_file: str):
     with open(input_file, "r") as f:
         items = f.readlines()
 
@@ -152,4 +170,10 @@ def pdf2text(pdf_dir, pdf_file, output_dir, grobid_url):
 
 
 if __name__ == "__main__":
+    # Add the directory which contains this file to the python path
+    import sys
+    import os
+
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
     cli()

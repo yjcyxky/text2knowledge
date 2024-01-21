@@ -1,0 +1,77 @@
+[
+    {
+        "entity": "Cigarette smoking (CS)",
+        "importance": 5,
+        "category": "Exposure"
+    },
+    {
+        "entity": "Ambient particulate matter (PM)",
+        "importance": 5,
+        "category": "Exposure"
+    },
+    {
+        "entity": "Insulin resistance (IR)",
+        "importance": 4,
+        "category": "Disease"
+    },
+    {
+        "entity": "Plasma triglycerides",
+        "importance": 3,
+        "category": "Metabolite"
+    },
+    {
+        "entity": "Hyperglycemia",
+        "importance": 3,
+        "category": "Symptom"
+    },
+    {
+        "entity": "Diabetes mellitus (DM)",
+        "importance": 4,
+        "category": "Disease"
+    },
+    {
+        "entity": "Gut microbiota dysbiosis",
+        "importance": 5,
+        "category": "BiologicalProcess"
+    },
+    {
+        "entity": "Lung-gut axis",
+        "importance": 4,
+        "category": "Pathway"
+    },
+    {
+        "entity": "Short-chain fatty acids (SCFAs)",
+        "importance": 3,
+        "category": "Metabolite"
+    },
+    {
+        "entity": "Gut bacteria",
+        "importance": 4,
+        "category": "Organism"
+    },
+    {
+        "entity": "Dietary fibers",
+        "importance": 3,
+        "category": "Compound"
+    },
+    {
+        "entity": "G-protein-coupled receptor (GPCR) signaling",
+        "importance": 4,
+        "category": "MolecularFunction"
+    },
+    {
+        "entity": "Histone deacetylase (HDAC)",
+        "importance": 3,
+        "category": "Enzyme"
+    },
+    {
+        "entity": "Inflammation",
+        "importance": 4,
+        "category": "Symptom"
+    },
+    {
+        "entity": "Air pollution-associated inflammation and metabolic disorders",
+        "importance": 3,
+        "category": "Disease"
+    }
+]
