@@ -31,13 +31,13 @@ docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8
 We use the [grobid](https://github.com/kermitt2/grobid) and [scipdf_parser](git+https://github.com/titipata/scipdf_parser) to convert pdf to json, figure, table, and text. If you want to know more about how to convert pdf to json, figure, table, and text, please refer to `grobid` and `scipdf_parser`. If you want to convert a large number of pdfs to json, figure, table, and text, please use a local grobid server instead of a public grobid server (https://kermitt2-grobid.hf.space).
 
 ```bash
-python3 text2knowledge.py pdf2text --pdf-file ../examples/pdfs/16451124.pdf --output-dir ../examples/extracted_pdfs/ --grobid-url https://kermitt2-grobid.hf.space
+python3 text2knowledge.py pdf2text --pdf-file ../examples/pdf2json/pdfs/16451124.pdf --output-dir ../examples/pdf2json/extracted_pdfs/ --grobid-url https://kermitt2-grobid.hf.space
 ```
 
 After running the above command, you will get the following files:
 
 ```bash
-examples/extracted_pdfs/16451124
+examples/pdf2json/extracted_pdfs/16451124
     |-- 16451124.json               # Abstract and body text
     |-- pdf                         # Original pdf, just for convenience
     |   |-- 16451124.pdf
@@ -76,13 +76,13 @@ Please refer to [Prompts](./text2knowledge/prompt_template.py) for more details.
 If you want to extract all entities from the text, you can use the following command.
 
 ```bash
-python3 text2knowledge.py extract-entities --text-file examples/abstract.txt --output-file examples/entities.json --model-name mistral:latest
+python3 text2knowledge.py extract-entities --text-file examples/text2knowledge/abstract.txt --output-file examples/text2knowledge/entities.json --model-name mistral:latest
 ```
 
 If you want to extract all relations from the text, you can use the following command.
 
 ```bash
-python3 text2knowledge.py extract-relationships-1 --text-file examples/abstract.txt --output-file examples/relationships.json --model-name mistral:latest
+python3 text2knowledge.py extract-relationships-1 --text-file examples/text2knowledge/abstract.txt --output-file examples/text2knowledge/relationships.json --model-name mistral:latest
 ```
 
 #### Issues
