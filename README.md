@@ -9,6 +9,12 @@ conda create -n text2knowledge python=3.10 openjdk=11
 
 If you have any questions about how to launch the grobid server, please refer to https://grobid.readthedocs.io/en/latest/Grobid-service/.
 
+If you encounter the following error when launching the grobid server, please download grobid manually and put it in the `pdf2json` folder, and then rename it to `grobid-0.8.0.zip` (The grobid version we use is `0.8.0`).
+
+The download link of grobid is [grobid-0.8.0.zip](https://github.com/kermitt2/grobid/archive/refs/tags/grobid-0.8.0.zip). After finished, please run `bash launch_grobid.sh` again.
+
+If you cannot run grobid server successfully, please use docker to run grobid server. If you only want to try the extraction function, you can skip the `Step 1` and use the public grobid server (https://kermitt2-grobid.hf.space) instead in `Step 2`.
+
 ```bash
 cd pdf2json
 bash launch_grobid.sh
