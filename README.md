@@ -114,6 +114,26 @@ A new solution to convert text to knowledge graph
 3. Select a suitable re-ranking algorithm
 4. Improve the prompts for generating questions based on the characteristics of the large language model
 
+## Benchmarking
+
+### Datasets
+
+Benchmarking Datasets and Tools for Biomedical NLP
+
+1. Biomedical Datasets: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04688-w/tables/2
+2. N2C2 NLP Dataset: https://portal.dbmi.hms.harvard.edu
+3. BC5CDR (BioCreative V CDR corpus): https://paperswithcode.com/dataset/bc5cdr
+4. BC4CHEMD (BioCreative IV Chemical compound and drug name recognition): https://paperswithcode.com/dataset/bc4chemd
+5. BioNLP: https://aclanthology.org/venues/bionlp/
+6. PubTator: https://www.ncbi.nlm.nih.gov/research/pubtator3/
+7. BioNLP-Corpus: https://github.com/bionlp-hzau/BioNLP-Corpus
+8. BioBERT & Bern: https://github.com/dmis-lab/bern
+9. BioRED: https://academic.oup.com/bib/article/23/5/bbac282/6645993
+
+### References
+
+You can refer to these [papers/models/companies](./REFERENCES.md) for more details.
+
 ## Contribution Guidelines
 
 We welcome and appreciate any contributions from the community members. If you wish to contribute to Text2Knowledge, please follow these steps:
