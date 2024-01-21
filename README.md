@@ -1,3 +1,15 @@
+## Benchmarking Datasets and Tools for Biomedical NLP
+
+1. Biomedical Datasets: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04688-w/tables/2
+2. N2C2 NLP Dataset: https://portal.dbmi.hms.harvard.edu
+3. BC5CDR (BioCreative V CDR corpus): https://paperswithcode.com/dataset/bc5cdr
+4. BC4CHEMD (BioCreative IV Chemical compound and drug name recognition): https://paperswithcode.com/dataset/bc4chemd
+5. BioNLP: https://aclanthology.org/venues/bionlp/
+6. PubTator: https://www.ncbi.nlm.nih.gov/research/pubtator3/
+7. BioNLP-Corpus: https://github.com/bionlp-hzau/BioNLP-Corpus
+8. BioBERT & Bern: https://github.com/dmis-lab/bern
+9. BioRED: https://academic.oup.com/bib/article/23/5/bbac282/6645993
+
 ## Text to Knolwedge Graph
 
 ### Introduction
@@ -8,7 +20,7 @@ A new solution to convert text to knowledge graph
 2. Convert all preset ontology items to `embeddings`
 3. `Map` all extracted entities to the ontology items by computing the similarity between the embeddings, and then pick up the top N similar ontology items for each entity
 4. Use a more precise method to `re-rank` the top N similar ontology items for each entity and pick up the top 1
-5. `Generate questions` from the mapped ontology items. If we have ten entities, we can generate **_C(10, 2) = 10! / [2!(10-2)!] = (10 _ 9) / (2 _ 1) = 45_** questions. We can reduce the number of questions based on our needs, such as we only care about the specific entities.
+5. `Generate questions` from the mapped ontology items. If we have ten entities, we can generate `C(10, 2) = 10! / [2!(10-2)!] = (10 _ 9) / (2 _ 1) = 45` questions. We can reduce the number of questions based on our needs, such as we only care about the specific entities.
 6. `Pick up the answer for each question` from the text by using a large language model (e.g. ChatGPT4, Vicuna, etc.)
 
 ### Improvement plan

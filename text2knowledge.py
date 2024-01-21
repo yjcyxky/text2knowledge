@@ -1,120 +1,12 @@
-import os
 import click
-import pickle
-import pandas as pd
+from pathlib import Path
 from dataclasses import dataclass
-from sentence_transformers import SentenceTransformer, util
 from typing import List, Dict
-
-model = SentenceTransformer("all-mpnet-base-v2")
-
-
-def similarity(query, passage_embeddings):
-    query_embedding = model.encode(query)
-
-    results = util.dot_score(query_embedding, passage_embeddings)  # type: ignore
-
-    return results.tolist()[0]
-
-
-@dataclass
-class Score:
-    score: float
-    category: str
-    name: str
-    raw_name: str
-
-
-def batch_similarity(
-    query_item: str, passage_embeddings_dict, metadata: Dict[str, pd.DataFrame]
-) -> List[Score]:
-    all_results: List[Score] = []
-    for category, passage_embeddings in passage_embeddings_dict.items():
-        results = similarity(query_item, passage_embeddings)
-        m = metadata.get(category, pd.DataFrame())
-        for i, result in enumerate(results):
-            r = Score(
-                score=result,
-                category=category,
-                name=m.iloc[i]["name"],
-                raw_name=query_item,
-            )
-            all_results.append(r)
-
-            # print("Batch similarity done. %s, %s" % (query_item, r))
-
-    return all_results
-
-
-def get_topk_items(
-    results: List[Score], k: int = 3, min_score: float = 0.5
-) -> List[Score]:
-    results.sort(key=lambda x: x.score, reverse=True)
-    results = [r for r in results if r.score > min_score]
-    return results[:k]
-
-
-def read_ontology(filepath) -> pd.DataFrame:
-    ontology = pd.read_csv(filepath, delimiter=",")
-    return ontology
-
-
-def get_valid_entities(
-    items: List[str], topk: int = 3, min_score: float = 0.5
-) -> List[List[Score]]:
-    filepath = "data/embeddings.pickle"
-
-    ontology_files = [
-        os.path.join("data", file)
-        for file in os.listdir("data")
-        if file.endswith(".csv")
-    ]
-
-    ontology_metadata = {}
-    ontology_items = {}
-    for file in ontology_files:
-        ontology = read_ontology(file)
-        filename = os.path.splitext(os.path.basename(file))[0]
-        ontology_metadata[filename] = ontology
-        ontology_items[filename] = ontology["name"].tolist()
-        print("Load %s ontology items: %s" % (filename, len(ontology_items[filename])))
-
-    if os.path.exists(filepath):
-        with open(filepath, "rb") as handle:
-            passage_embeddings = pickle.load(handle)
-    else:
-        passage_embeddings = {}
-        for category, ontology_item_lst in ontology_items.items():
-            # if category in [
-            #     "chemical",
-            #     "anatomy",
-            #     "biological_process",
-            #     "cellular_component",
-            #     "molecular_function",
-            #     "gene",
-            # ]:
-            #     continue
-
-            print("Encode %s items" % category)
-            passage_embeddings[category] = model.encode(
-                ontology_item_lst, show_progress_bar=True
-            )
-
-        with open(filepath, "wb") as handle:
-            pickle.dump(passage_embeddings, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
-    print("Load passage embeddings...")
-    final_results: List[List[Score]] = []
-    for item in items:
-        results = batch_similarity(item, passage_embeddings, ontology_metadata)
-
-        final_results.append(get_topk_items(results, topk, min_score=min_score))
-
-    return final_results
+from text2knowledge.utils import Score, batch_similarity, get_topk_items, load_model, load_tokenizer, gen_word_embedding
 
 
 def gen_text_template(input_text: str) -> str:
-    return f"""Find all biomedical items in the following text:
+    return f"""Find all biomedical items from the following text:
 
 {input_text}
 """
@@ -221,6 +113,8 @@ def find_relationship(input_file: str, abstract_file: str):
     valid_items = filter(
         lambda x: len(x) > 0, get_valid_entities(items, topk=1, min_score=0.8)
     )
+
+    print("Valid items: %s\n\n" % get_valid_entities(items, topk=5, min_score=0.5))
 
     all_possible_items = [i[0].raw_name for i in valid_items]
     print("All possible items: %s\n\n" % all_possible_items)
