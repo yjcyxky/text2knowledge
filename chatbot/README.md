@@ -49,10 +49,10 @@ target/release/chatbot --which 7b-mistral
 target/release/chatbot --model path/to/model.bin --tokenizer path/to/tokenizer.json --prompt "Hello, world!"
 
 # Advanced usage with specific parameters
-target/release/chatbot --which 7b-mistral --prompt interactive --sample-len 150 --temperature 0.7 --top-p 0.9
+target/release/chatbot --which 7b-mistral-instruct --prompt interactive --sample-len 150 --temperature 0.7 --top-p 0.9
 
 # Advanced usage with chat mode
-target/release/chatbot --which 7b-mistral --prompt chat --sample-len 150 --temperature 0.7 --top-p 0.9
+target/release/chatbot --which 7b-mistral-instruct --prompt chat --sample-len 150 --temperature 0.7 --top-p 0.9
 ```
 
 ### Models
