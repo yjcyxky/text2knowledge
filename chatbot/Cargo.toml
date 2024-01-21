@@ -1,0 +1,48 @@
+[package]
+name = "chatbot"
+version = "0.1.0"    # the current version, obeying semver
+authors = ["Jingcheng Yang <yjcyxky@163.com>"]
+
+[dependencies]
+accelerate-src = { version = "0.3.2", optional = true }
+candle-core = { version = "0.3.0"}
+candle-datasets = { version = "0.3.0" }
+candle-nn = { version = "0.3.0" }
+candle-transformers = { version = "0.3.0" }
+candle-flash-attn = { version = "0.3.0", optional = true }
+cudarc = { version = "0.9.14", features = ["f16"], optional = true }
+half = { version = "2.3.1", features = ["num-traits", "use-intrinsics", "rand_distr"], optional = true }
+image = { version = "0.24.7", default-features = false, features = ["jpeg", "png"] }
+intel-mkl-src = { version = "0.8.1", features = ["mkl-static-lp64-iomp"], optional = true }
+num-traits = "0.2.15"
+pyo3 = { version = "0.19.0", features = ["auto-initialize"], optional = true }
+rayon = "1.7.0"
+safetensors = "0.3.1"
+serde = { version = "1.0.171", features = ["derive"] }
+serde_json = "1.0.99"
+tokenizers = { version = "0.13.4", features = ["onig"] }
+anyhow = { version = "1", features = ["backtrace"] }
+byteorder = "1.4.3"
+clap = { version = "4.2.4", features = ["derive"] }
+hf-hub = "0.3.0"
+imageproc = { version = "0.23.0", default-features = false }
+memmap2 = { version = "0.7.1", features = ["stable_deref_trait"] }
+rand = "0.8.5"
+rusttype = { version = "0.9", default-features = false }
+tracing = "0.1.37"
+tracing-chrome = "0.7.1"
+tracing-subscriber = "0.3.7"
+wav = "1.0.0"
+# Necessary to disambiguate with tokio in wasm examples which are 1.28.1
+tokio = "1.29.1"
+
+[build-dependencies]
+anyhow = { version = "1", features = ["backtrace"] }
+
+[features]
+default = []
+accelerate = ["dep:accelerate-src", "candle-core/accelerate", "candle-nn/accelerate", "candle-transformers/accelerate"]
+cudnn = ["candle-core/cudnn"]
+mkl = ["dep:intel-mkl-src", "candle-core/mkl", "candle-nn/mkl", "candle-transformers/mkl"]
+cuda = ["candle-core/cuda", "candle-nn/cuda", "candle-transformers/cuda"]
+nccl = ["cuda", "cudarc/nccl", "dep:half"]

@@ -1,0 +1,441 @@
+{
+    "title": "The endogenous anti-angiogenic family of splice variants of VEGF, VEGF xxx b, are down-regulated in pre-eclamptic placentae at term",
+    "authors": "David O Bates; Philip P Macmillan; Joseph G Manjaly; Yan Qiu; Sarah J Hudson; Heather S Bevan; Alyson J Hunter; Peter W Soothill; Michael Read; Lucy F Donaldson; Steven J Harper",
+    "pub_date": "2006-01-12",
+    "abstract": "PET (pre-eclamptic toxaemia) has recently been linked with alterations in production of a VEGFR1 [VEGF (vascular endothelial growth factor) receptor 1] splice variant that acts as a circulating inhibitor. We have recently described a family of naturally occurring splice variants of VEGF, termed VEGF xxx b, that also appear to act as inhibitors of conventional VEGF xxx -mediated angiogenesis. To determine whether alteration in splicing of VEGF-VEGFR family members extended beyond VEGFR1, we investigated the effect of pre-eclampsia on placental VEGF xxx b mRNA and protein expression. VEGF xxx and VEGF xxx b mRNA and protein were both found in normal human term placentae. VEGF xxx protein formed the majority of the total VEGF protein (980 + \u2212 195 pg/mg), whereas VEGF xxx b (11.5 pg/mg) was found to form a small part of the total VEGF protein expression (1.5 + \u2212 0.24 %). Evidence for VEGF b, VEGF b and VEGF b expression was found. In pre-eclamptic placentae, there was a significant down-regulation of VEGF xxx b isoforms, but a small up-regulation of VEGF xxx isoforms. In normal placenta VEGF xxx b and VEGF xxx concentrations were positively correlated (r = 0.69, P < 0.02), whereas in pre-eclamptic placentae, there was a significant negative correlation between VEGF xxx b and VEGF xxx protein expression (r = \u2212 0.8, P < 0.02), indicating that there was a significant uncoupling of the splicing regulation of the VEGF isoforms. Combined with previous studies showing increased soluble VEGFR1 isoforms in human pre-eclampsia, these data suggest that there may be a common mechanism in pre-eclampsia that involves dysregulation of mRNA splicing of members of the VEGF-VEGFR axis.",
+    "sections": [
+        {
+            "heading": "INTRODUCTION",
+            "text": "Pre-eclampsia [PET (pre-eclamptic toxaemia)] occurs in 3-5 % of first pregnancies and is characterized by widespread endothelial dysfunction [1]. Failure of adequate trophoblast invasion and placental development results in an underperfused placenta, which is proposed to re-lease unidentified products into the maternal circulation that underlie this endothelial cell dysfunction [1], resulting in a spectrum of clinical manifestations, including hypertension, proteinuria, cerebral oedema and infarction, eclampsia (seizures), pulmonary oedema, liver haemorrhage, renal failure and coagulopathy. The foetus may also be severely affected by the disease either by growth restriction due to placental insufficiency or by premature delivery [2]. The clinical picture is resolved with removal of the placenta. The condition may occur from 20 weeks of gestation and is a worldwide problem both in the developing and developed world. For instance, it remains a leading cause of maternal morbidity and mortality in the U.K. [3]. Despite the great improvements in obstetric practice that have been established over the last 40 years, pre-eclampsia remains a leading cause of both maternal and infant mortality and morbidity worldwide.\nThe putative circulating factors that may link placental underdevelopment to systemic endothelial dysfunction in PET have not yet been identified, but many candidates have been proposed. We have shown recently [4], using a novel amphibian model to identify permeabilizing agents in human plasma, that a large-molecular-mass molecule circulating in human plasma from severe pre-eclamptic patients, but not normal or mildly pre-eclamptic patients, increases vascular permeability. Candidates include the VEGF (vascular endothelial growth factor) family of growth factors and receptors, which include potent proangiogenic molecules that regulate systemic endothelial cell function, vascular permeability, angiogenesis and blood flow.\nVEGF was first termed vascular permeability factor when it was partially isolated in ascitic fluid in 1983 due its ability to increase vascular permeability [5]. Subsequently a number of members of this family of angiogenic cytokines have been discovered, including VEGF-B, -C, -D and -E as well as PlGF (placental growth factor). The predominant conventional form, VEGF-A (or simply VEGF), is expressed as six main isoforms caused by alternative exon splicing, resulting in mature proteins varying from 121-206 amino acids (in most tissues the dominant isoform is VEGF , but in placenta VEGF and VEGF 121 are also found). VEGF is the dominant angiogenic molecule in physiological and pathological angiogenesis [6]. It is produced by a variety of cells and tissues, including the placental syncytiotrophoblasts and placental endothelial cells [7,8], and its production is greatly increased by hypoxia [9,10]. The placental bed in pre-eclamptic pregnancies has also been shown to have higher levels of HIF-1\u03b1 (hypoxia-inducible factor-1\u03b1), which is a potent promoter of VEGF production [11]. Clinical studies have also demonstrated that VEGF expression is up-regulated in pre-eclamptic placentae that are underperfused, as demonstrated by umbilical artery Doppler abnormalities [12].\nHowever, although the properties of VEGF rapidly led to its investigation as a potential pathophysiological molecule in PET, there has been considerable controversy over the levels of circulating levels of VEGF in PET over the last 10 years [13,14]. High VEGF levels have been identified in circulating plasma [15], amniotic fluid [16], umbilical cord serum [17] and urine [18] in PET. Moreover mRNA levels have been shown to be increased in pre-eclamptic placenta for VEGF and VEGFR (VEGF receptor) 1 [8,19]. However, VEGF ELISAs are susceptible to interference by VEGF-binding molecules such as sFlt-1 and heparin. A polyclonal VEGF RIA confirmed that total circulating VEGF concentrations increase from 20 weeks of gestation in women who will ultimately develop PET compared with normotensive controls [20,21]. Post-delivery VEGF concentrations fall in both PET and control women, suggesting that the placenta is a significant source of VEGF production in pregnancy [21]. VEGF protein and mRNA studies have been inconclusive and contradictory [8,22], and this may relate to differences in expression in different degrees of clinical severity: presence of hypertension alone, the classic triad (hypertension, poor placental development and proteinuria) and/or the addition of FGR (foetal growth restriction) or haemolysis, elevated liver enzymes and low platelets (HELLP) [7].\nIn contrast, a large number of studies have shown that free, available, VEGF levels are significantly reduced in pre-eclampsia [23,24]. This contradictory evidence is likely to be due to circulating forms of VEGFR1 (sFlt-1) which bind to VEGF [25]. Therefore, although the total levels of VEGF may be increased in pre-eclampsia, the physiologically active concentration (the unbound free levels of VEGF) may actually be reduced. sVEGFR1 (soluble VEGFR1) is a secreted splice variant of VEGFR1 that lacks the cytoplasmic tail. High circulating levels of sVEGFR1 in PET have been identified by a number of laboratories [19,26,27], with high levels occurring weeks prior to any clinical manifestations. High levels of plasma sVEGFR1 are mirrored by reduced membranebound VEGFR1 in placental beds [19] and are accompanied by high levels of circulating VEGF and low levels of PlGF [19]. High levels of sVEGFR1 antagonize the effects of VEGF and PlGF on placental development, vascularization and maternal endothelial cell function [19]. Recent studies, however, measuring molar concentrations of VEGF and sVEGFR1 in the same samples have shown that VEGF levels in circulating plasma are at least 15-fold higher than sVEGFR1 [15]. Therefore current clinical evidence suggests pre-eclampsia is characterized by high concentrations of circulating total VEGF and low concentrations of free VEGF. Surprisingly, however, the protein levels of VEGF in the placentae of patients with pre-eclampsia have not been published previously.\nHypertension in PET is thought to be due to impairment of normal endothelium-dependent relaxation mechanisms that regulate vasodilatation. Functional evidence for the potential importance of VEGF in PET comes from experiments using myometrial resistance vessels obtained at Caesarean section and investigation of the endothelial behaviour of the vessels using a wire myograph technique [28]. Plasma from women with PET, but not normotensive pregnancies, resulted in a reduction of the normal endothelium-dependent relaxation. This response did not occur when the plasma was incubated with anti-VEGF antibodies before exposure to the resistance vessels [28]. Thus VEGF may be important in mediating the endothelial response that occurs in PET, although how overexpression of a vasodilator such as VEGF results in hypertension is not immediately obvious.\nIn 2002, we described a novel group of VEGF splice variants that inhibit conventional VEGF [29]. These isoforms code for splice variants of the same size as VEGF-A isoforms described previously, but have an alternatively spliced C-terminus. These isoforms have been termed VEGF XXX b, hence VEGF 121 b, VEGF 165 b etc. These isoforms would be identified erroneously as their sister conventional pro-angiogenic isoforms by all previous ELISA, Western blot and immunohistology assays, and most RT (reverse transcription)-PCR studies conducted on preeclamptic samples. VEGF 165 b inhibits VEGF 165 -mediated HUVEC (human umbilical vein endothelial cell) proliferation and migration [29], VEGF 165 -mediated vasodilation ex vivo [29] and angiogenesis in vivo [30]. It appears to binds to VEGFR2, but does not activate it (i.e. the functional effects of the VEGF xxx and VEGF xxx b families are different when bound to at least one VEGFR) [29].\nIt is possible, therefore, that the changes described previously in VEGF expression in pre-eclampsia may be ascribed to changes in the pro-angiogenic or anti-angiogenic isoforms of VEGF. In the present study, we have therefore measured the concentrations of both isoforms in placentae from human pre-eclamptic patients and compared them with control subjects.",
+            "n_publication_ref": 44,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "MATERIALS AND METHODS",
+            "text": "All materials used are from Sigma-Aldrich, unless otherwise stated.",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "Tissue collection",
+            "text": "Placental samples were collected from 30 pregnant women aged 18-37 years between March 2001 and February 2002 from St Michael's Hospital, Bristol and Gloucester Royal Infirmary. The protocol for this study was approved by the UBHT Ethical Committee, and informed consent was obtained from all patients. Experiments were performed in a blinded manner.\nTwelve subjects were diagnosed with PET using the following criteria: hypertension, defined as systolic blood pressure > 140 mmHg and diastolic pressure > mmHg, in at least two consecutive measurements after being normotensive previously; proteinuria, defined as > 1000 mg/24 h collection; and resolution of both hypertension and proteinuria by at least 12 weeks postpartum. All pre-eclamptic samples were taken from Caesarean deliveries. Eighteen samples from healthy normotensive pregnant women were taken after Caesarean section for a variety of reasons, including foetal distress, failure to progress and placental abruption. These were included as controls. All samples were frozen at \u2212 80 \u2022 C until analysis. There was no difference between the maternal age (27 + \u2212 1.9 years for pre-eclamptic patients and + \u2212 1.9 years for control) and gestation (36.7 + \u2212 1.8 weeks for pre-eclamptic patients and 37.9 + \u2212 1.9 weeks for control).",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "mRNA extraction and RT-PCR",
+            "text": "mRNA was extracted, and RT and PCR carried out using exon-specific primers (exon 4, exon 8a and exon 8b primers) as described previously [30]. Primer sequences were: exon 4, 5 -GAG ATG AGC TTC CTA CAG CAC-3 ; exon 8b, 5 -TCA GTC TTT CCT GGT GAG AGA TCT GCA-3 ; and exon 8a, 5 -CTC ACC GCC TCG GCT TGT CAC-3 . Each primer had a BamH1 or HindIII restriction site added on to the 5 -end and two linker Ts. Thus the PCR products were 16 bp longer than the actual primer sequences. Each PCR included both a recombinant VEGF 165 b and VEGF 165 cDNA to ensure that there was no amplification of the inappropriate product.",
+            "n_publication_ref": 1,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "Protein extraction",
+            "text": "Protein was extracted from 20 samples. Best efforts were made to dissect portions of similar appearance and location from each placental sample. These were centrifuged in Eppendorf tubes at 8500 g for 5 min at 4 \u2022 C. The supernatant was removed and tissue was weighed. Lysis buffer [2.6 \u00b5l per mg of tissue; buffer composition: 50 mM Tris/HCl (pH 8), 150 mM NaCl, 1 mM EDTA, mM NaF, 1.5 mM MgCl , 10 % (v/v) glycerol, % (v/v) Triton X-100, 1 mM PMSF, 1 mM Na VaO 4 and 1 \u00b5g/ml each of the protease inhibitors aprotinin, leupeptin and pepstatin] was added and the solution was homogenized mechanically. Lysates were then centrifuged again at 8500 g for 9 min at 4 \u2022 C. Supernatants were removed and used for further analysis.",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "Western blotting and SDS/PAGE",
+            "text": "Protein was quantified from using a Bio-Rad Laboratories Protein Assay. Recombinant VEGF 165 (100 ng/well; R&D Systems) and VEGF b (50 ng/well; as described in [30]) reconstituted in PBS were used as controls on each gel. Samples were adjusted to 150 \u00b5g of total protein in PBS and loaded in loading buffer [100 mM Tris/HCl (pH 6.8), 4 % (w/v) SDS, 20 % (v/v) glycerol (BDH), 0.2 % (w/v) Bromophenol Blue, 5 % (v/v, final concentration) 2-mercaptoethanol]. All samples and controls were boiled for 5 min at 100 \u2022 C, loaded on to a 10 % (w/v) polyacrylamide gel and run in 25 mM Tris/ 250 mM glycine (BDH)/0.1 % SDS/milli-Q water. A kaleidoscope ladder (15 \u00b5l; Bio-Rad Laboratories) was used as a molecular-mass marker. The gel was then trimmed, equilibrated and transferred in 50 mM Tris/38 mM glycine (BDH)/20 % (v/v) methanol/0.1 % SDS on to a PVDF membrane (Fisher Scientific) pre-soaked in methanol. Protein was then transferred at a current of 60 V for 90 min.",
+            "n_publication_ref": 1,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "Immunodetection",
+            "text": "The PVDF membrane was incubated in 10 % (w/v) lowfat-powdered milk/TBS-Tween (Tris-buffered saline containing 0.05 % Tween 20) blocking solution for 1 h at room temperature, washed with TBS-Tween and incubated with primary antibody, diluted in % (w/v) lowfat-powdered milk/TBS-Tween, overnight at 4 \u2022 C. For detection of all VEGF isoforms, 1.25 \u00b5g/ml MAB293 purified mouse monoclonal IgG 2B (R&D Systems) was used. For detection of VEGF xxx b isoforms, a mouse monoclonal antibody, raised to the nine C-terminal amino acids of VEGF 165 b, was used (MAB3045; clone 56/1; R&D Systems). After washing further, the membrane was incubated for 1 h in 1.4 ng/ml HRP (horseradish peroxidase)-conjugated goat anti-(mouse IgG) (Pierce) diluted in 5 % (w/v) low-fat-powdered milk/TBS-Tween. The membrane was washed again and developed using an enhanced chemiluminescence kit (SuperSignal West Femto Maximum Sensitivity Substrate; Pierce).",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "VEGF ELISA",
+            "text": "ELISA for all VEGF isoforms was carried out on protein extracted from placentae using a VEGF DuoSet ELISA Kit (R&D Systems), according to the manufacturer's instructions. The lysis buffer used for protein extraction is expected to disrupt the sVEGFR1-VEGF interaction, enabling detection of all the VEGF present (including VEGF xxx b and bound VEGF xxx ).",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "VEGF xxx b ELISA",
+            "text": "Goat anti-(human pan-VEGF) capture antibody (0.8 \u00b5g/ ml; AF-293-NA; R&D Systems) diluted in PBS (pH 7.4) was absorbed on to the surface of a sterile 96-well Immulon-2HB flat-bottom plate (Thermo Labsystems) overnight at room temperature (100 \u00b5l/well). Wells were washed three times with PBS-Tween (PBS containing 0.05 % Tween 20), blocked with 5 % (v/v) normal goat serum (Vector Laboratories) diluted in PBS (200 \u00b5l/well) at 37 \u2022 C for 60 min with gentle shaking. After washing as above, serial dilutions of recombinant VEGF 165 b standards (R&D Systems) diluted in 1 % (w/v) BSA/PBS were applied on to the plate in triplicate at concentrations up to 4000 pg/ml (100 \u00b5l/well). Sample lysates were diluted 1:200 in 1 % (w/v) BSA/PBS and applied in triplicate (100 \u00b5l/well). Plates were then incubated at 37 \u2022 C for 30 min, washed as above and mouse monoclonal antibody to VEGF xxx b (100 \u00b5l/well; A56/1), diluted to 0.4 \u00b5g/ml in 1 % (w/v) BSA/PBS-Tween, was added and incubated at 37 \u2022 C for 30 min. After washing further, 100 \u00b5l of 27.5 ng/ml HRP-conjugated goat anti-(mouse IgG), in 1 % (w/v) BSA/PBS, was added and incubated at 37 \u2022 C for 30 min. This was followed by three washing steps. TNB super-sensitive liquid substrate was applied to all wells (100 \u00b5l/well) and incubated for 30 min at room temperature. Plates were protected from light and incubated at room temperature for 20 min to allow colour development. Colour development was stopped with the addition of 100 \u00b5l of 1M H 2 SO 4 (BDH). Plates were read immediately for light absorbance at a wavelength of 450 nm using a Dynex Technologies ",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "VEGF xxx b immunohistochemistry",
+            "text": "Immunohistochemistry was performed on formalinfixed paraffin-embedded tissue derived from a healthy placenta delivered by elective Caesarean for breach presentation. Sections (5 \u00b5m thick) were cut and mounted on to SuperFrost \u00ae Plus glass slides (Menzel-Glaser). Sections were dewaxed, rehydrated in graded ethanol (100, 90 and 70 %), washed in distilled water and then rinsed in PBS. Sections were microwave-heated in 10 mM trisodium citrate (pH 6.0) for either 12 min at 95 \u2022 C for VEGF xxx b staining or for 7 min at 800 W, followed by 9 min at 120 W, for pan-VEGF staining. Sections were then washed twice with PBS, incubated with 3 % (v/v) H 2 O 2 solution, washed twice with PBS, blocked with 3 % (w/v) BSA/ PBS and then with 1.5 % (v/v) normal horse serum (Vector lab)/PBS. Sections were then incubated with 8 \u00b5g/ml mouse monoclonal anti-(VEGF xxx b) IgG (MAB3045; R&D Systems), 5 \u00b5g/ml mouse anti-(VEGF IgG) (C-1; Santa Cruz) or normal mouse IgG, as a negative control, diluted in 1.5 % (v/v) normal horse serum/PBS overnight at room temperature in a humid chamber. Sections were washed twice with PBS-Tween and were then treated with both the non-specific blocking solutions as described above. Sections were then incubated with a biotinylated anti-(mouse IgG) antibody (Vector Lab) at a 1:200 dilution in 1.5 % (v/v) normal horse serum/ PBS for 1 h at room temperature in a humid chamber. Sections were washed twice with PBS-Tween, then incubated with Vectastain ABC solution (Vector Lab) for 45 min at room temperature in a humid chamber. Sections were washed twice in PBS-Tween, followed by treatment with 3,3 -diaminobenzidine peroxidase substrate solution (Vector Lab) for 10 min. The reaction was stopped by rinsing in distilled water. Sections VEGF PCR products were undetectable in a significant proportion of samples, despite repeated attempts and successful positive control samples (glyceraldehyde-3-phosphate dehydrogenase). All four combinations were seen in both normal and pre-eclamptic, but no significant differences were seen between samples (P > 0.1, as determined by \u03c7 2 test).\nwere washed twice with distilled water, counterstained in haematoxylin for 5 min, washed again, dehydrated in graded ethanol (70, 90 and 100 %), cleared in xylene and mounted with DPX and glass-coverslipped. Sections were examined with a \u00d7 40 objective on a Nikon Eclipse E-400 microscope, and images were captured using a Coolpix 995 digital camera and a DN-100 digital imaging system (Nikon Instruments).",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "RESULTS VEGF 165 b mRNA is expressed in normal and pre-eclamptic placentae",
+            "text": "RT-PCR showed that VEGF xxx b isoforms were expressed in both normal and pre-eclamptic placentae (Figure 1A). Multiple isoforms were detected, with bands seen consistent with VEGF 121 b (108 bp), VEGF 145 b (219 bp) and VEGF 165 b (240 bp). One sample had expression of a PCR product that fitted no known isoform of VEGF (sample 5, approx. 135 bp). VEGF xxx isoforms were also differentially expressed in placenta (Figure 1B). Three different isoforms were seen in placenta, with PCR product sizes consistent with expression of VEGF 165 , VEGF 189 and VEGF 206 . All mRNA samples were effectively transcribed, as shown by expression of \u03b2-actin (Figure 1C). Expression of VEGF isoforms was detected in approx. 80-85 % of placentae. Analysis of the relative expression of different isoforms (either one isoform or both) in different groups showed that there were no significant differences between either the combination of isoforms expressed or the pathology of the placenta (Figure 1D); however, RT-PCR is not quantitative and it has not been possible so far to develop isoform-specific quantitative PCR (Q-PCR), due to the lack of exon-specific sequences [exon 8b is part of the 3 -UTR (untranslated region) of the mRNA of the angiogenic isoforms].",
+            "n_publication_ref": 0,
+            "n_figure_ref": 4
+        },
+        {
+            "heading": "VEGF xxx b protein is expressed in normal placentae",
+            "text": "Western blotting of placental samples using an antibody against the distal splice site selection isoforms of VEGF (VEGF xxx b) showed multiple bands, consistent with the previously described isoforms, VEGF b, VEGF 189 b, and VEGF 121 b, as dimers and monomers in normal placentae (Figure 2, left-hand panel). When similar blots were probed with an antibody that detects all VEGF isoforms (including VEGF xxx b), many of the same bands were also apparent, showing that normal placental samples had significant expression of both pro-and antiangiogenic isoforms, but at much higher intensity (Figure 2, right-hand panel). Due to the differential nature of the antibodies, it was impossible to determine quantitatively the relative expression of these isoforms in normal or pre-eclamptic placentae. However, to estimate whether the amount of VEGF XXX b was quantitatively similar to that of VEGF, we included protein from a tissue known to express a significant proportion of VEGF as VEGF xxx b, prostate tissue, as well as normal placental tissue. Figure 2 shows two Western blots, both containing 150 \u00b5g of total protein and both developed until the prostate tissue lane developed bands consistent with VEGF xxx b or VEGF xxx monomer and dimer. It was immediately clear that the placental lane contained far more VEGF of all isoforms than VEGF xxx b isoforms when compared with prostate tissue. Therefore to determine the proportion of the placental tissue that was VEGF xxx b, an ELISA was carried out on the extracted protein. Using this ELISA, the mean concentration of pro-angiogenic isoforms was 980 + \u2212 195 pg/mg of total protein, whereas the mean concentration of VEGF xxx b isoforms was just + \u2212 1.3 pg/mg of total protein (1.5 + \u2212 0.24 % of the total VEGF).\nTo determine the location of the protein, formalinfixed paraffin-embedded samples from normal placentae were sectioned and stained with the anti-(VEGF 165 b) antibody. Figure 3 shows sections of normal term placenta stained with a mouse monoclonal antibody that detects all isoforms of VEGF, including the VEGF xxx b isoforms (pan-VEGF), and sections stained with the anti-(VEGF xxx b) antibody. A non-specific mouse IgG is also shown. Whereas the mouse IgG did not stain any tissues and the pan-VEGF antibody gave widespread staining, the VEGF xxx b-specific antibody stained only a proportion of cells in all three areas shown: the amnion, the chorionic villi and the deciduas of the stratum basale. Of particular interest was that the VEGF xxx b cells strongly stained the endothelial cells of the placental blood vessels and the syncytiotrophoblasts, but less so the other cells of the chorionic villi. In no case was VEGF xxx b staining seen in the absence of VEGF staining.",
+            "n_publication_ref": 0,
+            "n_figure_ref": 4
+        },
+        {
+            "heading": "VEGF xxx is up-regulated in pre-eclamptic placentae",
+            "text": "VEGF has been shown to be increased in circulating plasma in pre-eclampsia, but there has been no quantification of the amount of VEGF xxx present in placental tissue from pre-eclamptic patients. To determine whether pro-angiogenic isoforms of VEGF were altered in pre-eclamptic placentae, ELISAs were performed for all VEGF isoforms (pro-and anti-angiogenic, and VEGF total ) and for VEGF xxx b. The VEGF xxx b levels subtracted from the VEGF total gave VEGF xxx expression. VEGF xxx expression in placental tissue was slightly, but not significantly (P = 0.06), up-regulated in pre-eclamptic placentae (a mean increase from 0.98 + \u2212 0.20 ng/mg of ",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        },
+        {
+            "heading": "Pre-eclampsia is associated with an alteration in splicing of the VEGF gene",
+            "text": "Figure 6 shows the relationship between VEGF xxx b and VEGF xxx expression. In normal placenta, there is a significant positive correlation between the two families of isoforms in that VEGF xxx b expression is increased when VEGF xxx is increased (r = + 0.69, P < 0.02, as determined by Spearman correlation). This relationship was reversed in pre-eclampsia, such that VEGF xxx b expression was sigificantly negatively correlated with VEGF xxx expression (r = \u2212 0.80, P < 0.02; slope significantly different from VEGF xxx b; P < 0.01), demonstrating that the mechanism underlying the co-ordinated expression of the two fami-lies of isoforms, the splicing regulation, is altered in preeclampsia.",
+            "n_publication_ref": 0,
+            "n_figure_ref": 1
+        },
+        {
+            "heading": "DISCUSSION",
+            "text": "The fundamental aetiology of pre-eclampsia is still unknown. The pathophysiological symptoms of hypertension, proteinuria and increased vascular permeability have been interpreted as being consistent with alterations in expression, activity or binding of the VEGF family of proteins. In particular, VEGF has been identified as a propermeability pro-angiogenic vasodilator that is expressed during conditions of hypoxia, ischaemia or under-perfusion. Therefore some of the pathological sequelae of pre-eclampsia might be explained by an increase in VEGF expression resulting from placental underperfusion. Total circulating VEGF has been shown to be up-regulated in pre-eclamptic plasma and serum from approx. 5-10 ng/ml to 10-90 ng/ml depending on the study [14,21,31-33] using competitive enzyme immunoassays or RIAs. In contrast, free circulating VEGF levels have been shown in many studies to be reduced in pre-eclampsia, from 5-100 pg/ml in normal pregnancy to unmeasurable in preeclampsia [23][24][25]34,35]. sVEGFR1 reduces the measured   There was a significant positive correlation between the two families of isoforms in normal placentae (P < 0.05, as determined by Spearman correlation), which was reversed in pre-eclampsia, indicating alteration in splicing.\nVEGF levels by ELISA, but one recent study showed that the circulating VEGF was in 30-fold molar excess compared with sVEGFR1 [15] in serum from women with pre-eclampsia before delivery, suggesting that the circulating free VEGF must be reduced by a combination of circulating factors, including sVEGFR1 and sVEGFR2 (which is reduced in pre-eclampsia) [36].\nInjection of adenovirus expressing sVEGFR1, resulting in a 3-fold molar excess of sVEGFR1 compared with VEGF, has been shown to produce signs reminiscent of pre-eclampsia in animal models [25], and sVEGFR1 in ex vivo models can inhibit endothelial cell migration and tube formation [37]. In addition, renal glomerular specific knockout of VEGF has been shown to result in proteinuria and renal dysfunction similar to that in preeclampsia [38]. It is therefore clear that, although current clinical evidence suggests pre-eclampsia is characterized by high concentrations of total VEGF and low concentrations of free VEGF, this literature needs to be re-assessed after taking into account the presence of VEGF xxx b.\nWe recently described the novel VEGF xxx b family of VEGF isoforms that can inhibit angiogenesis and vasodilatation induced by VEGF [29,30]. The results from the present study suggest that this family of isoforms is poorly expressed in the normal placenta, but even more down-regulated in pre-eclampsia. Placental-derived VEGF xxx b may therefore be considered to be unlikely to contribute to the pre-eclamptic pathology at term, since it is unlikely to inhibit the large amount of pro-angiogenic VEGF xxx being produced by the placenta under both normal and pre-eclamptic conditions. The precise location of the placental expression of VEGF xxx b seen in Figure 3, however, means that we cannot rule out that a small down-regulation of VEGF xxx b protein in the entire placenta does not reflect a very significant change in the microdomain concentration, i.e. immediately around the endothelial cells. Placentally derived VEGF xxx b is, however, unlikely to contribute significantly to the altered circulating levels of pre-eclampsia seen just at term, although VEGF xxx b derived from other sources may still contribute. It should be noted that pre-eclamptic samples were from a slightly reduced gestation than controls (37 compared with 38 weeks), and further work is required to determine the expression levels of the VEGF xxx b during gestation.\nAs VEGF 165 b appears to inhibit angiogenesis induced by VEGF 165 in a 1:1 stoichiometric manner, VEGF b is unlikely to prevent angiogenesis in the placenta, and the functional significance of VEGF b expression in placenta is unknown. One caveat though is that we currently do not know the proportion of circulating VEGF that is VEGF xxx b, nor do we know how VEGF b interacts with sVEGFR1. Interestingly, in other human tissue fluids, such as the vitreous, VEGF 165 b levels are as high as 66 % of the total VEGF. The VEGF xxx b ELISA described in the present study is unsuitable for plasma samples as it results in a high background in plasma and serum, but determination of the circulating levels of VEGF 165 b in normal pregnancy and pre-eclampsia will be of value in the future.\nPerhaps the most surprising finding, however, was that the VEGF xxx b levels in pre-eclampsia lost their positive relationship with VEGF xxx isoforms. We have shown previously that VEGF xxx b mRNA was down-regulated in prostate and renal carcinoma [29,30]. Similarly, VEGF xxx b protein was not up-regulated in diabetic vitreous, whereas VEGF xxx protein was up-regulated [39]. The results described in the present study show that pathophysiological processes other than cancer can specifically down-regulate the anti-angiogenic family of protein isoforms, while at the same time up-regulating the pro-angiogenic isoforms. Three mechanisms for this alternate regulation include differential promoter selection [40], alternate regulation of mRNA stability, and hence translation [41], and regulation of alternate splicing [42]. All three of these mechanisms may contribute to this alternate expression of protein isoforms, but the promoter regions regulating VEGF xxx b expression, the differential mRNA stability of the two isoforms or the splicing factors involved in alternate regulation of VEGF have not been identified [43].\nPerhaps, more importantly, VEGF xxx b is not the only VEGF related splicing event that occurs in pre-eclampsia. sVEGFR1, also up-regulated in pre-eclampsia [44], is a splice variant of VEGFR1, formed by intron inclusion (failure of intron excision) [45], which results in a circulating extracellular domain of VEGFR1 that can bind to and inactivate VEGF isoforms, although its effect on VEGF xxx b isoforms is unknown. As discussed above, sVEGFR1 overexpression has recently been shown to be a significant and predicting event in pre-eclampsia generation [26,46], with circulating levels rising during onset of the condition and falling after placental delivery [26]. We therefore suggest that alteration of splicing in pre-eclampsia may not be limited just to sVEGFR1, and in fact one previous study [19] has shown that, although sVEGFR1 mRNA levels are increased in pre-eclamptic placentae, membrane-bound VEGFR1 levels are decreased in the placental bed of patients with pre-eclampsia. Altered splicing may occur in a wider variety of genes that regulate angiogenesis, including VEGF. These alterations in splicing may either be a result of or a cause of poor angiogenesis, hypertension and increased permeability. It is therefore possible that a common mechanism may underlie these two changes. Interestingly, it has recently been shown that other molecules are alternatively spliced in PET, including HLA-G (human leukocyte antigen G) [47], leptin receptors [48] and an aspartyl protease [49]. Since the investigation of spliceomics has yet to come of age and is currently overshadowed by transcriptomics and proteomics, we would be surprised if more splicing shifts in PET do not become apparent in the very near future. We suggest that one of the abnormalities in PET may be one of splicing control.\nIn summary, we have shown that (i) the VEGF xxx b family of anti-angiogenic isoforms of VEGF is a small proportion of the total VEGF pool in term placentae, (ii) they are further down-regulated in pre-eclamptic placentae, (iii) the link between pro-and anti-angiogenic isoform expression is disrupted in pre-eclampsia, indicating that regulation of splicing may be altered in the placenta in these conditions, and (iv) combined with previous studies, implicating alternative splicing of VEGFR1 in pre-eclampsia, these results can be interpreted to support the concept of a generalized splicing dysfunction in pre-eclampsia.",
+            "n_publication_ref": 27,
+            "n_figure_ref": 1
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "",
+            "n_publication_ref": 0,
+            "n_figure_ref": 0
+        }
+    ],
+    "references": [
+        {
+            "title": "Preeclampsia: an endothelial cell disorder",
+            "journal": "Am. J. Obstet. Gynecol",
+            "year": "1989",
+            "authors": "J M Roberts; R N Taylor; T J Musci; G M Rodgers; C A Hubel; M K Mclaughlin"
+        },
+        {
+            "title": "London 3 Department of Health (1998) Why Mother's Die. Report on Confidential Enquiries into Maternal Deaths in the United Kingdom",
+            "journal": "",
+            "year": "2000",
+            "authors": "; Department Of Health; London Tso; C R Neal; A J Hunter; S J Harper; P W Soothill; D O Bates"
+        },
+        {
+            "title": "Tumor cells secrete a vascular permeability factor that promotes accumulation of ascites fluid",
+            "journal": "Science",
+            "year": "1983",
+            "authors": "D R Senger; S J Galli; A M Dvorak; C A Perruzzi; V S Harvey; H F Dvorak"
+        },
+        {
+            "title": "Vascular endothelial growth factor: basic science and clinical progress",
+            "journal": "Endocr. Rev",
+            "year": "2004",
+            "authors": "N Ferrara"
+        },
+        {
+            "title": "VEGF expression in the placenta from pregnancies complicated by hypertensive disorders",
+            "journal": "Br. J. Obstet. Gynaecol",
+            "year": "2004",
+            "authors": "E Sgambati; M Marini; G D Zappoli Thyrion"
+        },
+        {
+            "title": "Differential expression of vascular endothelial growth factor (VEGF), endocrine gland derived-VEGF, and VEGF receptors in human placentas from normal and preeclamptic pregnancies",
+            "journal": "J. Clin. Endocrinol. Metab",
+            "year": "2004",
+            "authors": "J Y Chung; Y Song; Y Wang; R R Magness; J Zheng"
+        },
+        {
+            "title": "Vascular endothelial growth factor: basic biology and clinical implications",
+            "journal": "Experientia",
+            "year": "1997",
+            "authors": "N Ferrara; B Keyt"
+        },
+        {
+            "title": "Angiogenesis and the placental environment",
+            "journal": "Placenta",
+            "year": "1995",
+            "authors": "T Wheeler; C L Elcock; F W Anthony"
+        },
+        {
+            "title": "Selective overexpression of the hypoxia-inducible transcription factor, HIF-2\u03b1, in placentas from women with preeclampsia",
+            "journal": "Biol. Reprod",
+            "year": "2001",
+            "authors": "A Rajakumar; K A Whitelock; L A Weissfeld; A R Daftary; N Markovic; K P Conrad"
+        },
+        {
+            "title": "Uteroplacental blood flow and placental vascular endothelial growth factor in normotensive and pre-eclamptic pregnancy",
+            "journal": "Br. J. Obstet. Gynaecol",
+            "year": "2000",
+            "authors": "L A Simmons; A Hennessy; A G Gillin; R W Jeremy"
+        },
+        {
+            "title": "Elevated serum levels of vascular endothelial growth factor in patients with preeclampsia",
+            "journal": "Obstet. Gynecol",
+            "year": "1995",
+            "authors": "P N Baker; J Krasnow; J M Roberts; K T Yeo"
+        },
+        {
+            "title": "Maternal plasma levels of vascular endothelial growth factor in normotensive pregnancies and in pregnancies complicated by pre-eclampsia",
+            "journal": "Eur. J. Clin. Invest",
+            "year": "1996",
+            "authors": "A M Sharkey; J C Cooper; J R Balmforth"
+        },
+        {
+            "title": "Soluble vascular endothelial growth factor receptor-1 (sFlt-1) is increased throughout gestation in patients who have preeclampsia develop",
+            "journal": "Am. J. Obstet. Gynecol",
+            "year": "2004",
+            "authors": "G C Mckeeman; J E Ardill; C M Caldwell; A J Hunter; N Mcclure"
+        },
+        {
+            "title": "Amniotic vascular endothelial growth factor (VEGF) and nitric oxide (NO) in women with subsequent preeclampsia",
+            "journal": "Eur. J. Obstet. Gynecol. Reprod. Biol",
+            "year": "2004",
+            "authors": "A L Tranquilli; V Bezzeccheri; S R Giannubilo; C Scagnoli; L Mazzanti; G G Garzetti"
+        },
+        {
+            "title": "Umbilical cord serum vascular endothelial growth factor (VEGF) levels in normal pregnancies and in pregnancies complicated by preterm delivery or pre-eclampsia",
+            "journal": "Int. J. Gynaecol. Obstet",
+            "year": "2004",
+            "authors": "G Galazios; D Papazoglou; K Giagloglou; G Vassaras; N Koutlaki; E Maltezos"
+        },
+        {
+            "title": "High levels of urinary vascular endothelial growth factor in women with severe preeclampsia",
+            "journal": "Int. J. Biol. Markers",
+            "year": "2004",
+            "authors": "E M Roes; E A Steegers; C M Thomas"
+        },
+        {
+            "title": "Overexpression of the soluble vascular endothelial growth factor receptor in preeclamptic patients: pathophysiological consequences",
+            "journal": "J. Clin. Endocrinol. Metab",
+            "year": "2003",
+            "authors": "V Tsatsaris; F Goffin; C Munaut"
+        },
+        {
+            "title": "Variation in detection of VEGF in maternal serum by immunoassay and the possible influence of binding proteins",
+            "journal": "Ann. Clin. Biochem",
+            "year": "1997",
+            "authors": "F W Anthony; P W Evans; T Wheeler; P J Wood"
+        },
+        {
+            "title": "Serum levels of vascular endothelial growth factor in preeclamptic and normotensive pregnancy",
+            "journal": "Hypertension",
+            "year": "2000",
+            "authors": "A Hunter; M Aitkenhead; C Caldwell; G Mccracken; D Wilson; N Mcclure"
+        },
+        {
+            "title": "VEGF mRNA levels in placentae from pregnancies complicated by pre-eclampsia",
+            "journal": "Br. J. Obstet. Gynaecol",
+            "year": "1996",
+            "authors": "J C Cooper; A M Sharkey; D S Charnock-Jones; C R Palmer; S K Smith"
+        },
+        {
+            "title": "Reductions of vascular endothelial growth factor and placental growth factor concentrations in severe preeclampsia",
+            "journal": "Am. J. Obstet. Gynecol",
+            "year": "2000",
+            "authors": "J C Livingston; R Chin; B Haddad; E T Mckinney; R Ahokas; B M Sibai"
+        },
+        {
+            "title": "Selective deficit of angiogenic growth factors characterises pregnancies complicated by pre-eclampsia",
+            "journal": "Br. J. Obstet. Gynaecol",
+            "year": "1999",
+            "authors": "A Reuvekamp; F V Velsing-Aarts; I E Poulina; J J Capello; A J Duits"
+        },
+        {
+            "title": "Excess placental soluble fms-like tyrosine kinase 1 (sFlt1) may contribute to endothelial dysfunction, hypertension, and proteinuria in preeclampsia",
+            "journal": "J. Clin. Invest",
+            "year": "2003",
+            "authors": "S E Maynard; J Y Min; J Merchan"
+        },
+        {
+            "title": "Circulating angiogenic factors and the risk of preeclampsia",
+            "journal": "N. Engl. J. Med",
+            "year": "2004",
+            "authors": "R J Levine; S E Maynard; C Qian"
+        },
+        {
+            "title": "Elevated serum soluble vascular endothelial growth factor receptor 1 (sVEGFR-1) levels in women with preeclampsia",
+            "journal": "J. Clin. Endocrinol. Metab",
+            "year": "2003",
+            "authors": "K Koga; Y Osuga; O Yoshino"
+        },
+        {
+            "title": "VEGF via VEGF receptor-1 (Flt-1) mimics preeclamptic plasma in inhibiting uterine blood vessel relaxation in pregnancy: implications in the pathogenesis of preeclampsia",
+            "journal": "Lab. Invest",
+            "year": "1999",
+            "authors": "J Brockelsby; R Hayman; A Ahmed; A Warren; I Johnson; P Baker"
+        },
+        {
+            "title": "VEGF 165 b, an inhibitory splice variant of vascular endothelial growth factor, is down-regulated in renal cell carcinoma",
+            "journal": "Cancer Res",
+            "year": "2002",
+            "authors": "D O Bates; T G Cui; J M Doughty"
+        },
+        {
+            "title": "VEGF 165 b, an inhibitory vascular endothelial growth factor splice variant: mechanism of action, in vivo effect on angiogenesis and endogenous protein expression",
+            "journal": "Cancer Res",
+            "year": "2004",
+            "authors": "J Woolard; W Y Wang; H S Bevan"
+        },
+        {
+            "title": "Maternal plasma vascular endothelial growth factor concentrations in normal and hypertensive pregnancies and their relationship to peripheral vascular resistance",
+            "journal": "Am. J. Obstet. Gynecol",
+            "year": "2001",
+            "authors": "P M Bosio; T Wheeler; F Anthony; R Conroy; C O'herlihy; P Mckenna"
+        },
+        {
+            "title": "New scope in angiogenesis: role of vascular endothelial growth factor (VEGF), NO, lipid peroxidation, and vitamin E in the pathophysiology of pre-eclampsia among Egyptian females",
+            "journal": "Clin. Biochem",
+            "year": "2001",
+            "authors": "E M El-Salahy; M I Ahmed; A El-Gharieb; H Tawfik"
+        },
+        {
+            "title": "Vascular endothelial growth factor is increased in patients with preeclampsia",
+            "journal": "Am. J. Reprod. Immunol",
+            "year": "1997",
+            "authors": "M J Kupferminc; Y Daniel; T Englender"
+        },
+        {
+            "title": "Suppression of serum vascular endothelial growth factor immunoreactivity in normal pregnancy and in pre-eclampsia",
+            "journal": "Br. J. Obstet. Gynaecol",
+            "year": "1997",
+            "authors": "F Lyall; I A Greer; F Boswell; R Fleming"
+        },
+        {
+            "title": "Second-trimester maternal serum placental growth factor and vascular endothelial growth factor for predicting severe, early-onset preeclampsia",
+            "journal": "Obstet. Gynecol",
+            "year": "2003",
+            "authors": "B M Polliotti; A G Fry; D N Saller; R A Mooney; C Cox; R K Miller"
+        },
+        {
+            "title": "Angiogenic factors in preeclampsia",
+            "journal": "J. Soc. Gyn. Invest",
+            "year": "2003",
+            "authors": "D Schlembach; E Beinder"
+        },
+        {
+            "title": "Elevated placental soluble vascular endothelial growth factor receptor-1 inhibits angiogenesis in preeclampsia",
+            "journal": "Circ. Res",
+            "year": "2004",
+            "authors": "S Ahmad; A Ahmed"
+        },
+        {
+            "title": "Glomerular-specific alterations of VEGF-A expression lead to distinct congenital and acquired renal diseases",
+            "journal": "J. Clin. Invest",
+            "year": "2003",
+            "authors": "V Eremina; M Sood; J Haigh"
+        },
+        {
+            "title": "Diabetic retinopathy is associated with a switch in splicing from anti-to pro-angiogenic isoforms of vascular endothelial growth factor",
+            "journal": "Diabetologia",
+            "year": "2005",
+            "authors": "R M Perrin; O Konopatskaya; Y Qiu; S J Harper; D O Bates; A J Churchill"
+        },
+        {
+            "title": "New vascular endothelial growth factor isoform generated by internal ribosome entry site-driven CUG translation initiation",
+            "journal": "Mol. Endocrinol",
+            "year": "2001",
+            "authors": "I Huez; S Bornes; D Bresson; L Creancier; H Prats"
+        },
+        {
+            "title": "Sequencing of the human vascular endothelial growth factor (VEGF) 3 untranslated region (UTR): conservation of five hypoxia-inducible RNA-protein binding sites",
+            "journal": "Biochim. Biophys. Acta",
+            "year": "1997",
+            "authors": "N S Levy; M A Goldberg; A P Levy"
+        },
+        {
+            "title": "Differentiated human podocytes endogenously express an inhibitory isoform of vascular endothelial growth factor (VEGF165b) mRNA and protein",
+            "journal": "Am. J. Physiol. Renal Physiol",
+            "year": "2004",
+            "authors": "T G Cui; R R Foster; M Saleem"
+        },
+        {
+            "title": "Therapeutic potential of inhibitory VEGF splice variants",
+            "journal": "Future Oncol",
+            "year": "2005",
+            "authors": "D O Bates; S J Harper"
+        },
+        {
+            "title": "A vascular endothelial growth factor antagonist is produced by the human placenta and released into the maternal circulation",
+            "journal": "Biol. Reprod",
+            "year": "1998",
+            "authors": "D E Clark; S K Smith; Y He"
+        },
+        {
+            "title": "Inhibition of vascular endothelial cell growth factor activity by an endogenously encoded soluble receptor",
+            "journal": "Proc. Nat. Acad. Sci. U.S.A",
+            "year": "1993",
+            "authors": "R L Kendall; K A Thomas"
+        },
+        {
+            "title": "Urinary placental growth factor and risk of preeclampsia",
+            "journal": "JAMA, J. Am. Med. Assoc",
+            "year": "2005",
+            "authors": "R J Levine; R Thadhani; C Qian"
+        },
+        {
+            "title": "Shift in expression of HLA-G mRNA spliceforms in pregnancies complicated by preeclampsia",
+            "journal": "J. Soc. Gynecol. Invest",
+            "year": "2004",
+            "authors": "P M Emmer; I Joosten; M H Schut; P L Zusterzeel; J C Hendriks; E A Steegers"
+        },
+        {
+            "title": "Placental leptin receptor isoforms in normal and pathological pregnancies",
+            "journal": "Placenta",
+            "year": "2003",
+            "authors": "J Challier; M Galtier; T Bintein; A Cortez; J Lepercq; S Hauguel-De Mouzon"
+        },
+        {
+            "title": "Alternative forms of a novel aspartyl protease gene are differentially expressed in human gestational tissues",
+            "journal": "Mol. Hum. Reprod",
+            "year": "1999",
+            "authors": "E K Moses; K A Freed; J R Higgins; S P Brennecke"
+        }
+    ],
+    "figures": [
+        {
+            "figure_label": "",
+            "figure_type": "",
+            "figure_id": "fig_0",
+            "figure_caption": "Opsys MR system plate reader. Revelation Quicklink 4.25 software (Dynex Technologies) was used to construct a standard curve from mean absorbance values of VEGF xxx b standards enabling the estimation of VEGF concentration for each sample based on mean light absorbance across triplicates. All samples were at least greater than the lowest standard concentration. To ensure consistency, samples were repeated at multiple dilutions to ensure that concentrations were within the linear range of the ELISA. This ELISA detects all VEGF xxx b isoforms whether bound to sVEGFR1 or not (Y. Qui, R. M. Perrin, S. Raffy, S. J. Harper and D. O. Bates, unpublished work).",
+            "figure_data": ""
+        },
+        {
+            "figure_label": "",
+            "figure_type": "",
+            "figure_id": "fig_1",
+            "figure_caption": "FigureFigure Human placental samples express VEGF xxx b mRNART-PCR of human placenta using primers specific for (A) VEGF xxx b isoforms (exon 7/exon 8b) or (B) VEGF xxx isoforms (exon 7/exon 8a). Gels are representative of a minimum of two PCRs. All samples that had no VEGF mRNA detected were repeated at least three times. (C) All tissues had equivalent mRNA extraction, as demonstrated by PCR for \u03b2-actin. (D) Percentage of samples expressing VEGF b, VEGF 165 , both families or neither. VEGF PCR products were undetectable in a significant proportion of samples, despite repeated attempts and successful positive control samples (glyceraldehyde-3-phosphate dehydrogenase). All four combinations were seen in both normal and pre-eclamptic, but no significant differences were seen between samples (P > 0.1, as determined by \u03c7 2 test).",
+            "figure_data": ""
+        },
+        {
+            "figure_label": "",
+            "figure_type": "",
+            "figure_id": "fig_2",
+            "figure_caption": "FigureFigure Western blot of protein extracted from normal placenta and prostate (Left-hand panel) Western blot probed with an antibody to VEGF xxx b isoforms. Bands are consistent with VEGF 165 b (labelled), VEGF 189 b (a, monomer; and c, dimer) and VEGF 121 b (b, dimer). The recombinant human (rhVEGF 165 b) protein is monomerized and unglycosylated and, hence, runs lower than endogenous protein. (Right-hand panel) Western blot of normal placentae probed with antibody to all isoforms. Multiple bands are expressed at high levels, in particular at much higher levels than in prostate tissue, indicating much higher VEGF xxx expression than VEGF xxx b expression in placenta.",
+            "figure_data": ""
+        },
+        {
+            "figure_label": "3",
+            "figure_type": "",
+            "figure_id": "fig_3",
+            "figure_caption": "Figure 33Figure 3 Localization of immunohistochemical staining of VEGF and VEGF xxx b isoforms in term placentaVEGF and VEGF xxx b isoforms were localized in the simple cuboidal epithelium of the amnion (A) and the underlying connective tissue (CT) (panels i-iii), syncytiotrophoblasts of the chorionic villi (arrow heads), as well as the endothelium of the foetal placental blood vessels (BV) (panels iv-vi) and to some (arrows), but not all, decidual cells (DC) of the stratum basale (panels vii-ix). All VEGF xxx b-stained areas also stained for VEGF, but not all VEGF-stained areas were positive for VEGF xxx b. All non-specific mouse IgG controls were clean. Scale bar, 50 \u00b5m. IS, intervillous space.",
+            "figure_data": ""
+        },
+        {
+            "figure_label": "4",
+            "figure_type": "",
+            "figure_id": "fig_4",
+            "figure_caption": "Figure 4 VEGF4Figure 4 VEGF xxx is up-regulated in pre-eclamptic placentaeVEGF xxx levels measured by ELISA were, on average, lower in normal placenta compared with in PET.",
+            "figure_data": ""
+        },
+        {
+            "figure_label": "5",
+            "figure_type": "",
+            "figure_id": "fig_5",
+            "figure_caption": "Figure 5 VEGF5Figure 5 VEGF xxx b isoforms are down-regulated in preeclampsia VEGF xxx b levels measured by ELISA were significantly lower than VEGF xxx levels and were down-regulated further in pre-eclamptic placentae (P < 0.05, as determined by Mann-Whitney U test).",
+            "figure_data": ""
+        },
+        {
+            "figure_label": "6",
+            "figure_type": "",
+            "figure_id": "fig_6",
+            "figure_caption": "Figure 66Figure 6 Relationship between VEGF xxx and VEGF xxx b expression in normal and pre-eclamptic placentae",
+            "figure_data": ""
+        }
+    ],
+    "formulas": [],
+    "doi": "10.1042/CS20050292"
+}

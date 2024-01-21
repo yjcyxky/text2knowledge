@@ -1,8 +1,11 @@
 import click
+import time
+import os
 from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict
-from text2knowledge.utils import Score, batch_similarity, get_topk_items, load_model, load_tokenizer, gen_word_embedding
+from text2knowledge.utils import Score, batch_similarity, get_topk_items, load_model, load_tokenizer, gen_word_embedding, get_valid_entities
+from text2knowledge.pdf import list_pdfs, extract_fulltext, extract_figures
 
 
 def gen_text_template(input_text: str) -> str:
@@ -120,6 +123,32 @@ def find_relationship(input_file: str, abstract_file: str):
     print("All possible items: %s\n\n" % all_possible_items)
     questions = gen_all_questions(all_possible_items)
     print(gen_answer_question_template(questions, abstract))
+
+@click.command(help="Extract figures and fulltext from pdfs.")
+@click.option("--pdf-dir", type=click.Path(exists=True, file_okay=False, dir_okay=True), help="Directory of pdfs.")
+@click.option("--pdf-file", type=click.Path(exists=True, file_okay=True, dir_okay=False), help="Path to pdf file.")
+@click.option("--output-dir", type=click.Path(exists=True, file_okay=False, dir_okay=True), help="Output directory.")
+@click.option("--grobid-url", default="http://192.168.0.123:8070", help="URL of grobid service, default: http://192.168.0.123:8070")
+def pdf2text(pdf_dir, pdf_file, output_dir, grobid_url):
+    if pdf_dir and os.path.isdir(pdf_dir):
+        pdfs = list_pdfs(pdf_dir)
+    elif pdf_file and os.path.isfile(pdf_file):
+        pdfs = [pdf_file]
+    else:
+        raise ValueError("Please specify either pdf-dir or pdf-file")
+
+    for pdf in pdfs:
+        print("Processing %s..." % pdf)
+        print("Extract fulltext...")
+
+        # External service: https://kermitt2-grobid.hf.space
+        extract_fulltext(pdf, output_dir, grobid_url=grobid_url)
+        time.sleep(5)
+
+        print("Extract figures...")
+        extract_figures(pdf, output_dir)
+
+        print("Done!\n\n")
 
 
 if __name__ == "__main__":

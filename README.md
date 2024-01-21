@@ -10,6 +10,31 @@
 8. BioBERT & Bern: https://github.com/dmis-lab/bern
 9. BioRED: https://academic.oup.com/bib/article/23/5/bbac282/6645993
 
+## Installation
+
+```bash
+conda create -n text2knowledge python=3.10 openjdk=11
+```
+
+## Pdf to Text
+
+### Step 1: Launch the grobid server
+
+```bash
+cd pdf2json
+bash launch_grobid.sh
+
+# or
+
+docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
+```
+
+### Step 2: Convert pdf to json
+
+```bash
+python3 text2knowledge.py pdf2text --pdf-file ../examples/pdfs/16451124.pdf --output-dir <output-dir>
+```
+
 ## Text to Knolwedge Graph
 
 ### Introduction
