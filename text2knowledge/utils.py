@@ -8,15 +8,14 @@ import pandas as pd
 import torch
 import torch.nn.functional as F
 import pickle
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional, Union
 from dataclasses import dataclass
 
-
-def load_model(model_name: str | Path) -> PreTrainedModel:
+def load_model(model_name: Union[str, Path]) -> PreTrainedModel:
     """Load model from HuggingFace.
 
     Args:
-        model_name (str): Model name.
+        model_name (str | Path): Model name or path.
 
     Returns:
         AutoModel: Model.
@@ -28,12 +27,13 @@ def load_model(model_name: str | Path) -> PreTrainedModel:
 
 
 def load_tokenizer(
-    model_name: str | Path, use_fast: bool = False
+    model_name: Union[str, Path],
+    use_fast: bool = False
 ) -> PreTrainedTokenizer:
     """Load tokenizer from HuggingFace.
 
     Args:
-        model_name (str): Model name.
+        model_name (str | Path): Model name or path.
 
     Returns:
         AutoTokenizer: Tokenizer.
@@ -43,7 +43,7 @@ def load_tokenizer(
     return tokenizer  # type: ignore
 
 def load_tokenizer_and_model(
-    model_name: str,
+    model_name: Union[str, Path],
     use_fast: bool = True,
     subword_pooling_strategy: str = "sparse",
     layer_pooling_strategy: str = "mean",
@@ -68,9 +68,9 @@ def load_tokenizer_and_model(
 
 def gen_word_embedding(
     word: str,
-    model_name: str = "",
-    tokenizer: tre.Tokenizer | None = None,
-    model: tre.TransformersEmbedder | None = None,
+    model_name: Union[str, Path] = "",
+    tokenizer: Optional[tre.Tokenizer] = None,
+    model: Optional[tre.TransformersEmbedder] = None,
     subword_pooling_strategy: str = "sparse",
     layer_pooling_strategy: str = "mean",
 ):
@@ -123,7 +123,8 @@ def similarity(query_embedding: torch.Tensor, embeddings: List[torch.Tensor]):
 
 
 def vectorized_similarity(
-    query_embedding: torch.Tensor, embeddings: List[torch.Tensor]
+    query_embedding: torch.Tensor, 
+    embeddings: List[torch.Tensor]
 ):
     # Convert the query_embedding and embeddings to torch tensors
     query_embedding = torch.tensor(query_embedding)
@@ -194,9 +195,9 @@ def read_ontology(filepath, sep="\t") -> pd.DataFrame:
 
 def gen_embeddings4ontology(
     ontology: pd.DataFrame,
-    model_name: str = "",
-    tokenizer: tre.Tokenizer | None = None,
-    model: tre.TransformersEmbedder | None = None,
+    model_name: Union[str, Path] = "",
+    tokenizer: Optional[tre.Tokenizer] = None,
+    model: Optional[tre.TransformersEmbedder] = None,
 ) -> Dict[str, Dict[str, Any]]:
     embeddings = {}
     for item in ontology.iterrows():

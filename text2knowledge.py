@@ -124,11 +124,11 @@ def find_relationship(input_file: str, abstract_file: str):
     questions = gen_all_questions(all_possible_items)
     print(gen_answer_question_template(questions, abstract))
 
-@click.command(help="Extract figures and fulltext from pdfs.")
-@click.option("--pdf-dir", type=click.Path(exists=True, file_okay=False, dir_okay=True), help="Directory of pdfs.")
-@click.option("--pdf-file", type=click.Path(exists=True, file_okay=True, dir_okay=False), help="Path to pdf file.")
+@cli.command(help="Extract figures and fulltext from pdfs.")
+@click.option("--pdf-dir", type=click.Path(exists=True, file_okay=False, dir_okay=True), help="Directory of pdfs, you can specify either pdf-dir or pdf-file.")
+@click.option("--pdf-file", type=click.Path(exists=True, file_okay=True, dir_okay=False), help="Path to pdf file, you can specify either pdf-dir or pdf-file.")
 @click.option("--output-dir", type=click.Path(exists=True, file_okay=False, dir_okay=True), help="Output directory.")
-@click.option("--grobid-url", default="http://192.168.0.123:8070", help="URL of grobid service, default: http://192.168.0.123:8070")
+@click.option("--grobid-url", default="http://192.168.0.123:8070", help="URL of grobid service, you can launch a local grobid server, such as http://0.0.0.0:8070. Or you can use the public service: https://kermitt2-grobid.hf.space")
 def pdf2text(pdf_dir, pdf_file, output_dir, grobid_url):
     if pdf_dir and os.path.isdir(pdf_dir):
         pdfs = list_pdfs(pdf_dir)

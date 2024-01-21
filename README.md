@@ -29,7 +29,9 @@ bash launch_grobid.sh
 docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
 ```
 
-### Step 2: Convert pdf to json
+### Step 2: Convert pdf to json/figure/table/text
+
+We use the [grobid](https://github.com/kermitt2/grobid)) and [scipdf_parser](git+https://github.com/titipata/scipdf_parser) to convert pdf to json, figure, table, and text. If you want to know more about how to convert pdf to json, figure, table, and text, please refer to `grobid` and `scipdf_parser`.
 
 ```bash
 python3 text2knowledge.py pdf2text --pdf-file ../examples/pdfs/16451124.pdf --output-dir <output-dir>
