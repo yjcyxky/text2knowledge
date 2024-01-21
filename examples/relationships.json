@@ -1,0 +1,106 @@
+[
+    {
+        "source_name": "Cigarette smoking (CS)",
+        "source_type": "Environmental Exposure",
+        "target_name": "metabolic disorders",
+        "target_type": "Disease or Condition",
+        "relation_type": "risk_factor_for",
+        "key_sentence": "Cigarette smoking (CS) or ambient particulate matter (PM) exposure is a risk factor for metabolic disorders"
+    },
+    {
+        "source_name": "metabolic disorders",
+        "source_type": "Disease or Condition",
+        "target_name": "insulin resistance (IR)",
+        "target_type": "Disease or Condition",
+        "relation_type": "type_of",
+        "key_sentence": "metabolic disorders, such as insulin resistance (IR)"
+    },
+    {
+        "source_name": "metabolic disorders",
+        "source_type": "Disease or Condition",
+        "target_name": "increased plasma triglycerides",
+        "target_type": "Biological Process",
+        "relation_type": "result_of",
+        "key_sentence": "it can also cause gut microbiota dysbiosis. In smokers with metabolic disorders, CS cessation decreases the risks of serious pulmonary events, inflammation, and metabolic disorder"
+    },
+    {
+        "source_name": "metabolic disorders",
+        "source_type": "Disease or Condition",
+        "target_name": "hyperglycemia",
+        "target_type": "Biological Process",
+        "relation_type": "result_of",
+        "key_sentence": "metabolic disorders, such as insulin resistance (IR), increased plasma triglycerides, hyperglycemia, and diabetes mellitus (DM)"
+    },
+    {
+        "source_name": "metabolic disorders",
+        "source_type": "Disease or Condition",
+        "target_name": "diabetes mellitus (DM)",
+        "target_type": "Disease or Condition",
+        "relation_type": "type_of",
+        "key_sentence": "metabolic disorders, such as insulin resistance (IR), increased plasma triglycerides, hyperglycemia, and diabetes mellitus (DM)"
+    },
+    {
+        "source_name": "CS cessation",
+        "source_type": "Action or Event",
+        "target_name": "risks of serious pulmonary events",
+        "target_type": "Health Risk",
+        "relation_type": "decreases",
+        "key_sentence": "CS cessation decreases the risks of serious pulmonary events"
+    },
+    {
+        "source_name": "CS cessation",
+        "source_type": "Action or Event",
+        "target_name": "inflammation",
+        "target_type": "Biological Process",
+        "relation_type": "decreases",
+        "key_sentence": "CS cessation decreases the risks of serious pulmonary events, inflammation, and metabolic disorder"
+    },
+    {
+        "source_name": "CS cessation",
+        "source_type": "Action or Event",
+        "target_name": "metabolic disorder",
+        "target_type": "Disease or Condition",
+        "relation_type": "decreases_risk_of",
+        "key_sentence": "CS cessation decreases the risks of serious pulmonary events, inflammation, and metabolic disorder"
+    },
+    {
+        "source_name": "gut microbiota dysbiosis",
+        "source_type": "Condition or State",
+        "target_name": "SCFAs",
+        "target_type": "Metabolite",
+        "relation_type": "reduces",
+        "key_sentence": "The aforementioned gut microbiota dysbiosis reduces SCFA levels."
+    },
+    {
+        "source_name": "SCFAs",
+        "source_type": "Metabolite",
+        "target_name": "GPCR signaling",
+        "target_type": "Molecular Function",
+        "relation_type": "activates",
+        "key_sentence": "They activate G-protein-coupled receptor (GPCR) signaling,"
+    },
+    {
+        "source_name": "SCFAs",
+        "source_type": "Metabolite",
+        "target_name": "inflammation",
+        "target_type": "Biological Process",
+        "relation_type": "inhibits",
+        "key_sentence": "They suppress histone deacetylase (HDAC) activity and inhibit inflammation,"
+    },
+    {
+        "source_name": "SCFAs/GPCR signaling",
+        "source_type": "Treatment",
+        "target_name": "air pollution-associated inflammation",
+        "target_type": "Health Risk",
+        "relation_type": "alleviates",
+        "key_sentence": "Treatment targeting SCFA/GPCR signaling may alleviate air pollution-associated inflammation and metabolic disorders,"
+    },
+    {
+        "source_name": "SCFAs/GPCR signaling",
+        "source_type": "Treatment",
+        "target_name": "metabolic disorders",
+        "target_type": "Disease or Condition",
+        "relation_type": "treats",
+        "key_sentence": "Treatment targeting SCFA/GPCR signaling may alleviate air pollution-associated inflammation and metabolic disorders,"
+    }
+]

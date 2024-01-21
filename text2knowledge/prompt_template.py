@@ -2,7 +2,7 @@ ENTITY_EXTRACTION_PROMPT_TEMPLATE = """
 Your task is to extract the key concepts (and non-personal entities) mentioned in the given context. 
 Extract only the most important and atomistic concepts, if needed break the concepts down to simpler concepts.
 Categorize the concepts in one of the following categories: 
-["Gene", "Compound", "Disease", "Symptom", "Pathway", "Anatomy", "Metabolite", "MolecularFunction", "BiologicalProcess", "CellularComponent"]
+[Gene, Compound, Disease, Symptom, Pathway, Anatomy, Metabolite, MolecularFunction, BiologicalProcess, CellularComponent]
 
 Format your output as a list of JSON with the following format:
 
@@ -32,13 +32,18 @@ Thought 2: Think about how these terms can have one on one relation with other t
 
 Thought 3: Find out the relation between each such related pair of terms. 
 
-Format your output as a list of json. Each element of the list contains a pair of terms
-and the relation between them, like the following: 
+The type of relation between two terms can be one of the following:
+[associated_with, upregulated_in, downregulated_in, activated_by, inhibited_by, reduced_by, increased_by, alleviated_by, induced_by, unknown]
+
+Format your output as a list of json. Each element of the list contains a pair of terms and the relation between them, like the following: 
 [
    {
-       "node_1": "A concept from extracted ontology",
-       "node_2": "A related concept from extracted ontology",
-       "edge": "relationship between the two concepts, node_1 and node_2 in one or two sentences"
+       "source_name": "A concept from extracted ontology",
+       "source_type": "The type of the concept, e.g. Gene, Compound, Disease, Symptom, Pathway, Anatomy, Metabolite, MolecularFunction, BiologicalProcess, CellularComponent, etc.",
+       "target_name": "A related concept from extracted ontology",
+       "target_type": "The type of the concept, e.g. Gene, Compound, Disease, Symptom, Pathway, Anatomy, Metabolite, MolecularFunction, BiologicalProcess, CellularComponent, etc.",
+       "relation_type": "The type of relation between the two concepts."
+       "key_sentence": "relationship between the two concepts, node_1 and node_2 in one or two sentences"
    }, {...}
 ]
 """

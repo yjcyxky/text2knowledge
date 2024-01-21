@@ -76,13 +76,13 @@ Please refer to [Prompts](./text2knowledge/prompt_template.py) for more details.
 If you want to extract all entities from the text, you can use the following command.
 
 ```bash
-python3 text2knowledge.py extract-entities --text-file examples/abstract.txt --output-file test.json --model-name mistral:latest
+python3 text2knowledge.py extract-entities --text-file examples/abstract.txt --output-file examples/entities.json --model-name mistral:latest
 ```
 
 If you want to extract all relations from the text, you can use the following command.
 
 ```bash
-python3 text2knowledge.py extract-relationships-1 --text-file examples/abstract.txt --output-file test.json --model-name mistral:latest
+python3 text2knowledge.py extract-relationships-1 --text-file examples/abstract.txt --output-file examples/relationships.json --model-name mistral:latest
 ```
 
 #### Issues
