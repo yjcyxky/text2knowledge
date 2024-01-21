@@ -87,11 +87,11 @@ python3 text2knowledge.py extract-relationships-1 --text-file examples/abstract.
 
 #### Issues
 
--[] How to improve the accuracy of the entity extraction?
+- [ ] How to improve the accuracy of the entity extraction?
 
--[] How to align the entities and relations? In current version, we extract entities and relations separately.
+- [ ] How to align the entities and relations? In current version, we extract entities and relations separately.
 
--[] How to align all entities to the ontology items? Such as `Hepatocellular carcinoma` --> `MONDO:0007256`. You can access the [BioPortal](https://bioportal.bioontology.org/) for learning more about the ontology items.
+- [ ] How to align all entities to the ontology items? Such as `Hepatocellular carcinoma` --> `MONDO:0007256`. You can access the [BioPortal](https://bioportal.bioontology.org/) for learning more about the ontology items.
 
 
 ### Strategy 2: Employ the LLM ask choice questions to extract entities and relations
