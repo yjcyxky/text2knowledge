@@ -73,3 +73,22 @@ A new solution to convert text to knowledge graph
 2. Select the most suitable similarity algorithm
 3. Select a suitable re-ranking algorithm
 4. Improve the prompts for generating questions based on the characteristics of the large language model
+
+
+## Chatbot
+
+Read the [README.md](chatbot/README.md) in the `chatbot` folder for more details.
+
+## Contribution Guidelines
+
+We welcome and appreciate any contributions from the community members. If you wish to contribute to Text2Knowledge, please follow these steps:
+
+1. Fork the repository and create your branch.
+2. Make changes in your branch.
+3. Submit a Pull Request.
+
+Please ensure that your code adheres to the project's coding style and quality standards before submitting your contribution.
+
+## License
+
+Text2Knowledge is released under the MIT License. For more details, please refer to the `LICENSE.md` file in the repository.
