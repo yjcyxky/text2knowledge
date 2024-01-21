@@ -2,6 +2,8 @@
 
 ```bash
 conda create -n text2knowledge python=3.10 openjdk=11
+
+git clone https://github.com/yjcyxky/text2knowledge.git
 ```
 
 ## Pdf to Text
