@@ -2,11 +2,13 @@ import os
 import json
 import requests
 
+# The following codes are from the repo: https://github.com/rahulnyk/knowledge_graph
 BASE_URL = os.environ.get('OLLAMA_HOST', 'http://localhost:11434')
 
 # Generate a response for a given prompt with a provided model. This is a streaming endpoint, so will be a series of responses.
 # The final response object will include statistics and additional data from the request. Use the callback function to override
 # the default handler.
+# https://github.com/ollama/ollama/blob/main/docs/api.md
 def generate(model_name, prompt, system=None, template=None, context=None, options=None, callback=None):
     try:
         url = f"{BASE_URL}/api/generate"

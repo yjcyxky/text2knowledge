@@ -39,6 +39,7 @@ cli = click.Group()
     help="A metadata file which contains a json object. Such as {'source': 'pubmed', 'pmid': '123456', 'type': 'abstract', ...}, you can specify any key-value pairs you want.",
 )
 def extract_entities(text_file: str, output_file: str, model_name: str, metadata: str):
+    print("Extracting entities using the model %s..." % model_name)
     if metadata and os.path.exists(metadata):
         with open(metadata, "r") as f:
             metadata = f.read()
@@ -47,6 +48,7 @@ def extract_entities(text_file: str, output_file: str, model_name: str, metadata
 
     with open(text_file, "r") as f:
         abstract = f.read()
+        abstract = f"USER: {abstract} ASSISTANT: "
         entities = extract_concepts(abstract, model=model_name, metadata=metadata)
 
     if entities:
@@ -54,7 +56,7 @@ def extract_entities(text_file: str, output_file: str, model_name: str, metadata
             entities_str = json.dumps(entities, indent=4)
             f.write(entities_str)
     else:
-        print("No entities found.")
+        print(f"No entities found for the {text_file} file.")
 
 
 @cli.command(help="Extract relationships between biomedical entities from a given text using strategy 1.")
@@ -100,7 +102,7 @@ def extract_relationships_1(text_file: str, model_name: str, metadata: str, outp
             relations_str = json.dumps(relations, indent=4)
             f.write(relations_str)
     else:
-        print("No relations found.")
+        print(f"No relations found for the {text_file} file.")
 
 
 @cli.command(

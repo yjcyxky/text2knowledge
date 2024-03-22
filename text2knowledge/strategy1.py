@@ -5,6 +5,10 @@ from text2knowledge.prompt_template import ENTITY_EXTRACTION_PROMPT_TEMPLATE, RE
 
 def extract_concepts(prompt: str, metadata={}, model="mistral-openorca:latest"):
     response, _ = client.generate(model_name=model, system=ENTITY_EXTRACTION_PROMPT_TEMPLATE, prompt=prompt)
+    # prompt = f"{ENTITY_EXTRACTION_PROMPT_TEMPLATE}\n\n{prompt}"
+    # response, _ = client.generate(model_name=model, prompt=prompt, options={
+    #     "temperature": 0.6,
+    # })
     try:
         result = json.loads(response)
         result = [dict(item, **metadata) for item in result]
@@ -22,8 +26,11 @@ def graph_prompt(input: str, metadata={}, model="mistral-openorca:latest"):
     # model_info = client.show(model_name=model)
     # print( chalk.blue(model_info))
 
-    USER_PROMPT = f"context: ```{input}``` \n\n output: "
-    response, _ = client.generate(model_name=model, system=RELATION_EXTRACTION_PROMPT_TEMPLATE, prompt=USER_PROMPT)
+    # USER_PROMPT = f"context: ```{input}``` \n\n output: "
+    # response, _ = client.generate(model_name=model, system=RELATION_EXTRACTION_PROMPT_TEMPLATE, prompt=USER_PROMPT)
+
+    USER_PROMPT = f"{RELATION_EXTRACTION_PROMPT_TEMPLATE}\n\ncontext: ```{input}``` \n\n output: "
+    response, _ = client.generate(model_name=model, prompt=USER_PROMPT)
     try:
         result = json.loads(response)
         result = [dict(item, **metadata) for item in result]
