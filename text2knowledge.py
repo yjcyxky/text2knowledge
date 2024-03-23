@@ -38,7 +38,13 @@ cli = click.Group()
     type=click.Path(exists=False, file_okay=False, dir_okay=False),
     help="A metadata file which contains a json object. Such as {'source': 'pubmed', 'pmid': '123456', 'type': 'abstract', ...}, you can specify any key-value pairs you want.",
 )
-def extract_entities(text_file: str, output_file: str, model_name: str, metadata: str):
+@click.option(
+    "--review",
+    "-r",
+    is_flag=True,
+    help="Review the entities and make corrections.",
+)
+def extract_entities(text_file: str, output_file: str, model_name: str, metadata: str, review: bool = False):
     print("Extracting entities using the model %s..." % model_name)
     if metadata and os.path.exists(metadata):
         with open(metadata, "r") as f:
@@ -49,6 +55,32 @@ def extract_entities(text_file: str, output_file: str, model_name: str, metadata
     with open(text_file, "r") as f:
         abstract = f.read()
         abstract = f"USER: {abstract} ASSISTANT: "
+
+        if os.path.exists(output_file):
+            if review:
+                entities = json.load(open(output_file))
+
+                if entities:
+                    print(f"Entities found in the {text_file} file, so we will review them.")
+                    print(f"Previous entities: {entities}\n")
+                    abstract = f"""
+{abstract}
+
+The following entities are extracted by your previous run:
+{entities}
+
+Please carefully review the previously extracted results, following these steps:
+1. Verify that each entity extracted aligns precisely with the designated categories. Ensure that the categorization is strict and appropriate.
+2. Confirm that all entities listed under each category accurately match the category's criteria.
+3. Assess the confidence scores assigned to each extraction. Consider the accuracy and relevance of the entity to its category, adjusting the scores to more accurately reflect the confidence level.
+4. If you identify any discrepancies, inaccuracies, or misalignments with the categories, please correct them. Use the same format as the original extraction to present your corrections.
+
+Your review should be thorough, ensuring the final extraction results are both accurate and logically structured according to the outlined categories.
+"""
+            else:
+                print(f"Entities found in the {text_file} file, so we will skip the extraction.")
+                return
+
         entities = extract_concepts(abstract, model=model_name, metadata=metadata)
 
     if entities:
