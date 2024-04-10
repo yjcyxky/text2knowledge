@@ -2,3 +2,4 @@
 .vscode
 __pycache__
 examples/mecfs_longcovid
+pdf2json/grobid-0.8.0.zip

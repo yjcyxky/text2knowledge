@@ -11,7 +11,7 @@
   },
   "caption": "Figure 2 Western blot of protein extracted from normal placenta and prostate (Left-hand panel) Western blot probed with an antibody to VEGFxxxb isoforms. Bands are consistent with VEGF165b (labelled), VEGF189b (a, monomer; and c, dimer) and VEGF121b (b, dimer). The recombinant human (rhVEGF165b) protein is monomerized and unglycosylated and, hence, runs lower than endogenous protein. (Right-hand panel) Western blot of normal placentae probed with antibody to all isoforms. Multiple bands are expressed at high levels, in particular at much higher levels than in prostate tissue, indicating much higher VEGFxxx expression than VEGFxxxb expression in placenta.",
   "imageText": ["580", "D.", "O.", "Bates", "and", "others"],
-  "renderURL": "/Users/jy006/Downloads/Antibody/output/16451124/figures/16451124-Figure2-1.png",
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/16451124/figures/16451124-Figure2-1.png",
   "captionBoundary": {
     "x1": 90.6351318359375,
     "y1": 360.4278259277344,
@@ -31,7 +31,7 @@
   },
   "caption": "Figure 1 Human placental samples express VEGFxxxb mRNA RT-PCR of human placenta using primers specific for (A) VEGFxxxb isoforms (exon 7/exon 8b) or (B) VEGFxxx isoforms (exon 7/exon 8a). Gels are representative of a minimum of two PCRs. All samples that had no VEGF mRNA detected were repeated at least three times. (C) All tissues had equivalent mRNA extraction, as demonstrated by PCR for β-actin. (D) Percentage of samples expressing VEGF165b, VEGF165 , both families or neither. VEGF PCR products were undetectable in a significant proportion of samples, despite repeated attempts and successful positive control samples (glyceraldehyde-3-phosphate dehydrogenase). All four combinations were seen in both normal and pre-eclamptic, but no significant differences were seen between samples (P > 0.1, as determined by χ2 test).",
   "imageText": ["VEGFxxxb", "expression", "in", "pre-eclamptic", "placentae", "579"],
-  "renderURL": "/Users/jy006/Downloads/Antibody/output/16451124/figures/16451124-Figure1-1.png",
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/16451124/figures/16451124-Figure1-1.png",
   "captionBoundary": {
     "x1": 62.420440673828125,
     "y1": 336.91082763671875,
@@ -51,7 +51,7 @@
   },
   "caption": "Figure 4 VEGFxxx is up-regulated in pre-eclamptic placentae",
   "imageText": [],
-  "renderURL": "/Users/jy006/Downloads/Antibody/output/16451124/figures/16451124-Figure4-1.png",
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/16451124/figures/16451124-Figure4-1.png",
   "captionBoundary": {
     "x1": 90.63600158691406,
     "y1": 346.83782958984375,
@@ -71,7 +71,7 @@
   },
   "caption": "Figure 5 VEGFxxxb isoforms are down-regulated in preeclampsia",
   "imageText": [],
-  "renderURL": "/Users/jy006/Downloads/Antibody/output/16451124/figures/16451124-Figure5-1.png",
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/16451124/figures/16451124-Figure5-1.png",
   "captionBoundary": {
     "x1": 90.63600158691406,
     "y1": 687.34375,
@@ -91,7 +91,7 @@
   },
   "caption": "Figure 3 Localization of immunohistochemical staining of VEGF and VEGFxxxb isoforms in term placenta VEGF and VEGFxxxb isoforms were localized in the simple cuboidal epithelium of the amnion (A) and the underlying connective tissue (CT) (panels i–iii), syncytiotrophoblasts of the chorionic villi (arrow heads), as well as the endothelium of the foetal placental blood vessels (BV) (panels iv–vi) and to some (arrows), but not all, decidual cells (DC) of the stratum basale (panels vii–ix). All VEGFxxxb-stained areas also stained for VEGF, but not all VEGF-stained areas were positive for VEGFxxxb. All non-specific mouse IgG controls were clean. Scale bar, 50 µm. IS, intervillous space.",
   "imageText": ["VEGFxxxb", "expression", "in", "pre-eclamptic", "placentae", "581"],
-  "renderURL": "/Users/jy006/Downloads/Antibody/output/16451124/figures/16451124-Figure3-1.png",
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/16451124/figures/16451124-Figure3-1.png",
   "captionBoundary": {
     "x1": 62.42076110839844,
     "y1": 372.8298034667969,

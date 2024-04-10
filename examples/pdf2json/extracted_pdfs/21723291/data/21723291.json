@@ -1,0 +1,201 @@
+[{
+  "renderDpi": 300,
+  "name": "2",
+  "page": 5,
+  "figType": "Figure",
+  "regionBoundary": {
+    "x1": 57.839999999999996,
+    "y1": 72.48,
+    "x2": 531.12,
+    "y2": 696.0
+  },
+  "caption": "Fig. 2. Mutational hot-spot analysis of improved variants from the ribosome-display random mutagenesis of CAND22_D10. The number of each mutation was observed in an analysis of 22 improved variants. (a) Heavy-chain positions (CDR regions highlighted). (b) Light-chain positions (CDR regions highlighted).",
+  "imageText": ["Position", "of", "mutation", "n", "at", "io", "f", "M", "ut", "cy", "o", "qu", "en", "F", "re", "(b)", "CDR1", "CDR2", "CDR3", "16", "14", "12", "10", "8", "6", "4", "2", "0", "Position", "of", "mutation", "(a)", "F", "re", "qu", "en", "cy", "o", "f", "M", "ut", "at", "io", "n", "CDR1", "CDR2", "CDR3", "16", "14", "12", "10", "8", "6", "4", "2", "E", "V", "Q", "L", "V", "Q", "S", "G", "G", "G", "L", "I", "Q", "P", "G", "G", "S", "L", "R", "L", "S", "C", "A", "A", "S", "G", "F", "T", "I", "S", "S", "N", "Y", "M", "I", "W", "V", "R", "Q", "A", "P", "G", "K", "G", "L", "E", "WV", "S", "D", "L", "Y", "Y", "Y", "A", "G", "D", "T", "Y", "Y", "A", "D", "S", "V", "K", "G", "R", "F", "T", "M", "S", "R", "D", "I", "S", "K", "N", "T", "V", "Y", "L", "Q", "M", "N", "S", "L", "R", "A", "E", "D", "T", "G", "V", "Y", "Y", "C", "A", "R", "W", "A", "D", "D", "H", "Y", "Y", "Y", "I", "D", "V", "WG", "R", "G", "T", "L", "V", "T", "V", "S", "S", "0", "G", "A", "S", "D", "E", "Q", "N", "I", "L", "V", "F", "W", "Y", "T", "M", "K", "P", "R", "H", "C", "D", "I", "V", "M", "T", "Q", "S", "P", "S", "T", "L", "S", "A", "S", "V", "G", "D", "R", "V", "T", "I", "T", "C", "R", "A", "S", "Q", "G", "I", "S", "S", "W", "L", "A", "W", "Y", "Q", "Q", "K", "P", "G", "R", "A", "P", "K", "V", "L", "I", "Y", "K", "A", "S", "T", "L", "E", "S", "G", "V", "P", "S", "R", "F", "S", "G", "S", "G", "S", "G", "T", "D", "F", "T", "L", "T", "I", "S", "S", "L", "Q", "P", "E", "D", "F", "A", "T", "Y", "Y", "C", "Q", "Q", "S", "Y", "S", "T", "P", "W", "T", "F", "G", "Q", "G", "T", "K", "L", "E", "I", "K", "G", "A", "S", "D", "E", "Q", "N", "I", "L", "V", "F", "W", "Y", "T", "M", "K", "P", "R", "C", "H"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Figure2-1.png",
+  "captionBoundary": {
+    "x1": 58.84735107421875,
+    "y1": 711.9501342773438,
+    "x2": 530.0363159179688,
+    "y2": 737.1212158203125
+  }
+}, {
+  "renderDpi": 300,
+  "name": "4",
+  "page": 10,
+  "figType": "Table",
+  "regionBoundary": {
+    "x1": 64.8,
+    "y1": 602.64,
+    "x2": 537.12,
+    "y2": 735.8399999999999
+  },
+  "caption": "Table 4. Noncompartmental pharmacokinetic parameters of C",
+  "imageText": ["which", "is", "shown", "as", "median", "(range).", "gures.", "2", "437", "21.1", "96.1", "8.46", "7", "111", "3.58", "23.0", "3.24", "4.7", "25.4", "29.7", "23.9", "38.3", "0", "1930", "3.02", "93.8", "28.4", "6", "824", "1.57", "6.73", "8.87", "2.0", "42.6", "51.8", "7.2", "31.2", "t1/2", "(day)", "Vss", "(ml/kg)", "Clearance", "(ml/kg/day)", "AUCinf", "(μg", "day/ml)", "Clast", "y/ml)", "CV=coefficient", "of", "variation.", "n=3", "animals", "per", "group.", "Parameters", "are", "shown", "as", "mean", "(standard", "deviation),", "except", "for", "tmax,", "Mean", "pharmacokinetic", "parameters", "are", "rounded", "to", "three", "significant", "fi", "CAT6001", "(5", "mg/kg)", "Mean", "0.02", "127", "43", "SD", "0", "11.2", "10", "CV%", "0", "8.80", "2", "MEDI51(17", "5", "mg/kg)", "Mean", "0.02", "158", "146", "SD", "0", "21.8", "46", "CV%", "0", "13.8", "3", "AU", "(μg", "da", "Cmax", "(μg/ml)", "tmax", "(day)", "Treatment", "Animal/", "group"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Table4-1.png",
+  "captionBoundary": {
+    "x1": 65.1968002319336,
+    "y1": 594.3123168945312,
+    "x2": 312.3690490722656,
+    "y2": 599.58447265625
+  }
+}, {
+  "renderDpi": 300,
+  "name": "3",
+  "page": 10,
+  "figType": "Table",
+  "regionBoundary": {
+    "x1": 64.8,
+    "y1": 101.52,
+    "x2": 292.08,
+    "y2": 145.92
+  },
+  "caption": "Table 3. Affinity of anti-IL-6 antibodies for FcRn at pH 6.0",
+  "imageText": ["CAT6001", "2610", "1160", "MEDI5117", "226", "365", "Antibody", "Kd", "human", "FcRn", "(nM)", "Kd", "cynomolgus", "FcRn", "(nM)"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Table3-1.png",
+  "captionBoundary": {
+    "x1": 65.1968002319336,
+    "y1": 93.09042358398438,
+    "x2": 291.20855712890625,
+    "y2": 98.36260986328125
+  }
+}, {
+  "renderDpi": 300,
+  "name": "7",
+  "page": 10,
+  "figType": "Figure",
+  "regionBoundary": {
+    "x1": 319.44,
+    "y1": 89.52,
+    "x2": 528.0,
+    "y2": 234.48
+  },
+  "caption": "Fig. 7. Plasma concentrations of CAT6001 human IgG1 and the YTE-containing mutant MEDI5117 in cynomolgus monkeys. The data shown are the concentrations in plasma at various time points after the administration of a single dose of CAT6001 or MEDI5117 (three animals per group; 5 mg/kg intravenously).",
+  "imageText": ["7", "100.0", "CAT6001", "MEDI5117", "10.0", "1.0", "0.1", "/m", "L)", "(", "µg", "ve", "ls", "y", "Le", "ib", "od", "A", "nt", "sm", "a", "P", "la", "Time", "(Days", "after", "Dosing)", "0", "14", "21", "28", "35", "42", "49", "56"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Figure7-1.png",
+  "captionBoundary": {
+    "x1": 309.770263671875,
+    "y1": 249.05252075195312,
+    "x2": 536.4365844726562,
+    "y2": 304.1567077636719
+  }
+}, {
+  "renderDpi": 300,
+  "name": "3",
+  "page": 6,
+  "figType": "Figure",
+  "regionBoundary": {
+    "x1": 64.8,
+    "y1": 72.48,
+    "x2": 537.12,
+    "y2": 465.84
+  },
+  "caption": "Fig. 3. Generation of the anti-IL-6 antibodies CNDY033G03 and CNDY121C05. (a) Potency improvements of the best lead antibodies derived from a ribosome-display randommutagenesis library compared to phage-display CDR3 targeted mutagenesis libraries. (b) Location of V-gene mutations in CNDY033G03 mapped onto a model of Fv structure. (c) Location of V-gene mutations in CNDY121C05 mapped onto a model of Fv structure.",
+  "imageText": ["(b)", "(c)", "(a)", "Targeted", "mutagenesis", "and", "recombination", "of", "VH", "and", "VL", "CDR3", "via", "Phage", "Display", "CNDY121C05", "IC50", "=", "1.6", "pM", "CNDY033G03", "IC50", "=", "40", "pM", "Random", "mutagenesis", "across", "the", "entire", "Fv", "via", "Ribosome", "Display", "CAND22_D10", "IC50", "=", "93", "nM", "-8", "-6", "IC", "50", "(l", "o", "g", "M", ")", "-10", "-12", "-14"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Figure3-1.png",
+  "captionBoundary": {
+    "x1": 65.19694519042969,
+    "y1": 481.0399169921875,
+    "x2": 536.4164428710938,
+    "y2": 516.2451782226562
+  }
+}, {
+  "renderDpi": 300,
+  "name": "5",
+  "page": 9,
+  "figType": "Figure",
+  "regionBoundary": {
+    "x1": 75.84,
+    "y1": 91.2,
+    "x2": 269.28,
+    "y2": 371.52
+  },
+  "caption": "Fig. 5. Determination of the affinity of CAT6001 for IL-6 using Schild-type analysis of activity in TF-1 proliferation assay. (a) Concentration–response curves of IL-6 in the absence (control) or in the presence of different concentrations of CAT6001 (indicated in key as log(M)). Response is the percent maximal proliferation to IL-6 in the TF-1 proliferation assay (data represent the mean± SEM of n=3 independent experiments). (b) Schild plot analysis (derived from the data in (a)) to generate the apparent Kd of the antibody. Dose ratios were generated using 50% response levels of IL-6 in the presence and in the absence of antibody and log(dose ratio−1) plotted against log[antibody](M). The x-intercept of the fitted regression line is an estimate of pA2, which is the apparent equilibrium dissociation constant for the antagonist.",
+  "imageText": ["Apparent", "KD", "0.40pM", "(95%", "CI", "0.12pM", "-0.69pM,", "n=6)", "-1", ")", "at", "io", "e", "R", "(D", "os", "Lo", "g", "Log[CAT6001]", "(M)", "2.5", "2.0", "1.5", "1.0", "0.5", "-14", "-13", "-12", "-11", "-10", "-9", "0.0", "ns", "e", "es", "po", "-6", "r", "um", "IL", "ax", "im", "%", "M", "Log[IL-6]", "(M)", "CAT6001", "(LogM)", "-12.5", "-12", "-11", "-10.5", "-10", "Control", "120", "100", "80", "60", "40", "20", "0", "-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "(b)", "(a)"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Figure5-1.png",
+  "captionBoundary": {
+    "x1": 58.845550537109375,
+    "y1": 388.0635070800781,
+    "x2": 285.49566650390625,
+    "y2": 532.7999877929688
+  }
+}, {
+  "renderDpi": 300,
+  "name": "6",
+  "page": 9,
+  "figType": "Figure",
+  "regionBoundary": {
+    "x1": 329.52,
+    "y1": 191.04,
+    "x2": 505.2,
+    "y2": 594.9599999999999
+  },
+  "caption": "Fig. 6. Inhibition of IL-1β-induced VEGF release from RA-FLS by neutralization of endogenously produced IL-6. (a) IL-1β stimulation ofRA-FLS results in release of IL-6. The mean concentration of IL-6 measured in response to 0.6 pM IL-1β was 2.78 nM (95% confidence interval: 0.19–5.37; n=6). (b) In the presence of sIL-1Rα (2.4 nM), the IL-6/sIL6Rα complex results in increased VEGF release. (c) Inhibition of IL-6-mediated VEGF release from IL-1βstimulated RA-FLS by CAT6001 (0.6 pM IL-1β and 2.4 nM sIL-6Rα). Data represent the mean±SEM of n=4 independent experiments. The IC50 of CAT6001 under these conditions was determined as 672 pM (95% confidence interval: 201–2247 pM).",
+  "imageText": ["(c)", "(b)", "(a)", "/m", "l)", "(", "ng", "IL", "-6", "log[", "IL-1β", "]", "(M)", "300", "250", "200", "150", "100", "50", "-15", "-14", "-13", "-12", "-11", "-10", "-9", "0", "se", "el", "ea", "F", "r", "E", "G", "um", "V", "ax", "im", "%", "m", "log[Antibody]", "(M)", "150", "CAT6001", "100", "50", "0", "-50", "-12", "-11", "-10", "-9", "-8", "-7", "/m", "l)", "(", "pg", "ea", "se", "r", "el", "G", "F", "V", "E", "log[", "IL-1β", "]", "(M)", "550", "500", "450", "400", "350", "-16", "-15", "-14", "-13", "-12", "-11", "300"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Figure6-1.png",
+  "captionBoundary": {
+    "x1": 303.4201354980469,
+    "y1": 610.1863403320312,
+    "x2": 530.1901245117188,
+    "y2": 735.0233154296875
+  }
+}, {
+  "renderDpi": 300,
+  "name": "1",
+  "page": 3,
+  "figType": "Figure",
+  "regionBoundary": {
+    "x1": 73.92,
+    "y1": 57.839999999999996,
+    "x2": 721.1999999999999,
+    "y2": 515.28
+  },
+  "caption": "Fig. 1. Generation of the anti-IL-6 antibody CNDY121C05 from CAND22_D10. Schematic of selection and screening campaign to isolate CNDY121C05.",
+  "imageText": [],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Figure1-1.png",
+  "captionBoundary": {
+    "x1": 67.52130126953125,
+    "y1": 515.0552368164062,
+    "x2": 668.9603271484375,
+    "y2": 520.327392578125
+  }
+}, {
+  "renderDpi": 300,
+  "name": "4",
+  "page": 8,
+  "figType": "Figure",
+  "regionBoundary": {
+    "x1": 64.8,
+    "y1": 72.48,
+    "x2": 537.12,
+    "y2": 431.76
+  },
+  "caption": "Fig. 4. Amino acid usage within the VH and VL CDR3 loops of the improved-potency anti-IL-6 variants from phagedisplay CDR3 mutagenesis libraries.",
+  "imageText": ["M", "L", "R", "W", "P", "S", "V", "I", "Y", "D", "H", "G", "Q", "N", "E", "T", "A", "VH", "CDR3", "position", "A", "(96)", "D", "(97)", "D", "(98)", "H", "(99)", "Y", "(100)", "Y", "(100a)", "Y", "(100b)", "I", "(100c)", "-", "(100d)", "D", "(101)", "V", "(102)", "100%", "90%", "80%", "70%", "60%", "50%", "40%", "30%", "20%", "10%", "0%", "Deleted", "M", "L", "R", "W", "P", "S", "V", "I", "Y", "D", "H", "G", "Q", "N", "E", "T", "A", "VL", "CDR3", "position", "Q", "(89)", "Q", "(90)", "S", "(91)", "Y", "(92)", "S", "(93)", "T", "(94)", "P", "(95)", "W", "(96)", "T", "(97)", "100%", "90%", "80%", "70%", "60%", "50%", "40%", "30%", "20%", "10%", "0%"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Figure4-1.png",
+  "captionBoundary": {
+    "x1": 65.19694519042969,
+    "y1": 447.080810546875,
+    "x2": 536.3922119140625,
+    "y2": 462.2742004394531
+  }
+}, {
+  "renderDpi": 300,
+  "name": "1",
+  "page": 4,
+  "figType": "Table",
+  "regionBoundary": {
+    "x1": 64.8,
+    "y1": 111.6,
+    "x2": 292.08,
+    "y2": 364.8
+  },
+  "caption": "Table 1. Potency of improved antibodies derived from the random mutagenesis of CAN22_D10 V-genes",
+  "imageText": ["Parent", "10", "74.00", "93.00", "CNDY001G06", "94", "ND", "ND", "CNDY003H08", "83", "ND", "ND", "CNDY013B01", "85", "ND", "ND", "CNDY035G06", "88", "0.09", "0.39", "CNDY022E07", "94", "0.04", "0.05", "CNDY024F11", "83", "ND", "ND", "CNDY033A08", "83", "ND", "ND", "CNDY002G09", "84", "ND", "ND", "CNDY032D09", "85", "ND", "ND", "CNDY002B05", "84", "ND", "ND", "CNDY022C11", "86", "ND", "ND", "CNDY033G03", "92", "0.19", "0.04", "CNDY033D08", "89", "0.41", "ND", "CNDY021G04", "83", "ND", "ND", "CNDY014D05", "86", "0.15", "0.15", "CNDY001A04", "92", "0.07", "ND", "CNDY024E11", "92", "0.14", "ND", "CNDY022A03", "89", "0.02", "ND", "CNDY035A02", "88", "0.11", "ND", "CNDY033D03", "84", "ND", "ND", "CNDY004D02", "84", "ND", "ND", "CNDY022H09", "84", "ND", "ND", "TF-1", "cell", "IC50", "(nM)", "IL-6/IL-6R", "(%", "inhibition)", "IL-6/IL-6R", "IC50", "(nM)", "Potency", "(scFv)", "Potency", "(IgG)"],
+  "renderURL": "/Users/jy006/Documents/Code/BioMedGPS/text2knowledge/examples/pdf2json/extracted_pdfs/21723291/figures/21723291-Table1-1.png",
+  "captionBoundary": {
+    "x1": 65.1968002319336,
+    "y1": 93.09042358398438,
+    "x2": 291.8155517578125,
+    "y2": 108.34033203125
+  }
+}]
