@@ -1,5 +1,9 @@
 .DS_Store
 .vscode
 __pycache__
-examples/mecfs_longcovid
+examples/mecfs_longcovid/*
+!examples/mecfs_longcovid/run.sh
 pdf2json/grobid-0.8.0.zip
+test.ipynb
+pubtext_embeddings.pkl
+examples/antibody/*

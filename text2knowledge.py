@@ -1,9 +1,7 @@
 import click
-import time
 import os
 import json
 from text2knowledge.utils import get_valid_entities
-from text2knowledge.pdf import list_pdfs, extract_fulltext, extract_figures
 from text2knowledge.strategy1 import extract_concepts, graph_prompt
 from text2knowledge.strategy2 import gen_text_template, gen_all_questions, gen_answer_question_template
 
@@ -50,7 +48,7 @@ def extract_entities(text_file: str, output_file: str, model_name: str, metadata
         with open(metadata, "r") as f:
             metadata = f.read()
     else:
-        metadata = {}
+        metadata = {} # type: ignore
 
     with open(text_file, "r") as f:
         abstract = f.read()
@@ -123,7 +121,7 @@ def extract_relationships_1(text_file: str, model_name: str, metadata: str, outp
         with open(metadata, "r") as f:
             metadata = f.read()
     else:
-        metadata = {}
+        metadata = {} # type: ignore
 
     with open(text_file, "r") as f:
         text = f.read()
@@ -137,70 +135,44 @@ def extract_relationships_1(text_file: str, model_name: str, metadata: str, outp
         print(f"No relations found for the {text_file} file.")
 
 
-@cli.command(
-    help="Extract relationships between biomedical entities from a given abstract using strategy 2."
-)
-@click.option(
-    "--abstract-file",
-    "-a",
-    help="Abstract file which contains a paragraph.",
-    required=True,
-    type=click.Path(exists=True, file_okay=True, dir_okay=False),
-)
-@click.option(
-    "--input-file",
-    "-i",
-    help="Input file which contains a list of biomedical entities.",
-    required=True,
-    type=click.Path(exists=True, file_okay=True, dir_okay=False),
-)
-def extract_relationships_2(input_file: str, abstract_file: str):
-    with open(input_file, "r") as f:
-        items = f.readlines()
+# @cli.command(
+#     help="Extract relationships between biomedical entities from a given abstract using strategy 2."
+# )
+# @click.option(
+#     "--abstract-file",
+#     "-a",
+#     help="Abstract file which contains a paragraph.",
+#     required=True,
+#     type=click.Path(exists=True, file_okay=True, dir_okay=False),
+# )
+# @click.option(
+#     "--input-file",
+#     "-i",
+#     help="Input file which contains a list of biomedical entities.",
+#     required=True,
+#     type=click.Path(exists=True, file_okay=True, dir_okay=False),
+# )
+# def extract_relationships_2(input_file: str, abstract_file: str):
+#     with open(input_file, "r") as f:
+#         items = f.readlines()
 
-    with open(abstract_file, "r") as f:
-        abstract = f.read()
+#     with open(abstract_file, "r") as f:
+#         abstract = f.read()
 
-    items = list(
-        filter(lambda x: len(x) > 0, [item.strip() for item in items])
-    )  # remove empty lines and strip the spaces
+#     items = list(
+#         filter(lambda x: len(x) > 0, [item.strip() for item in items])
+#     )  # remove empty lines and strip the spaces
 
-    valid_items = filter(
-        lambda x: len(x) > 0, get_valid_entities(items, topk=1, min_score=0.8)
-    )
+#     valid_items = filter(
+#         lambda x: len(x) > 0, get_valid_entities(items, topk=1, min_score=0.8)
+#     )
 
-    print("Valid items: %s\n\n" % get_valid_entities(items, topk=5, min_score=0.5))
+#     print("Valid items: %s\n\n" % get_valid_entities(items, topk=5, min_score=0.5))
 
-    all_possible_items = [i[0].raw_name for i in valid_items]
-    print("All possible items: %s\n\n" % all_possible_items)
-    questions = gen_all_questions(all_possible_items)
-    print(gen_answer_question_template(questions, abstract))
-
-@cli.command(help="Extract figures and fulltext from pdfs.")
-@click.option("--pdf-dir", type=click.Path(exists=True, file_okay=False, dir_okay=True), help="Directory of pdfs, you can specify either pdf-dir or pdf-file.")
-@click.option("--pdf-file", type=click.Path(exists=True, file_okay=True, dir_okay=False), help="Path to pdf file, you can specify either pdf-dir or pdf-file.")
-@click.option("--output-dir", type=click.Path(exists=True, file_okay=False, dir_okay=True), help="Output directory.")
-@click.option("--grobid-url", default="http://192.168.0.123:8070", help="URL of grobid service, you can launch a local grobid server, such as http://0.0.0.0:8070. Or you can use the public service: https://kermitt2-grobid.hf.space")
-def pdf2text(pdf_dir, pdf_file, output_dir, grobid_url):
-    if pdf_dir and os.path.isdir(pdf_dir):
-        pdfs = list_pdfs(pdf_dir)
-    elif pdf_file and os.path.isfile(pdf_file):
-        pdfs = [pdf_file]
-    else:
-        raise ValueError("Please specify either pdf-dir or pdf-file")
-
-    for pdf in pdfs:
-        print("Processing %s..." % pdf)
-        print("Extract fulltext...")
-
-        # External service: https://kermitt2-grobid.hf.space
-        extract_fulltext(pdf, output_dir, grobid_url=grobid_url)
-        time.sleep(5)
-
-        print("Extract figures...")
-        extract_figures(pdf, output_dir)
-
-        print("Done!\n\n")
+#     all_possible_items = [i[0].raw_name for i in valid_items]
+#     print("All possible items: %s\n\n" % all_possible_items)
+#     questions = gen_all_questions(all_possible_items)
+#     print(gen_answer_question_template(questions, abstract))
 
 
 if __name__ == "__main__":

@@ -23,7 +23,7 @@ bash launch_grobid.sh
 
 # or
 
-docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
+docker run --rm --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
 ```
 
 ### Step 2: Convert pdf to json/figure/table/text
@@ -31,13 +31,17 @@ docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8
 We use the [grobid](https://github.com/kermitt2/grobid) and [scipdf_parser](git+https://github.com/titipata/scipdf_parser) to convert pdf to json, figure, table, and text. If you want to know more about how to convert pdf to json, figure, table, and text, please refer to `grobid` and `scipdf_parser`. If you want to convert a large number of pdfs to json, figure, table, and text, please use a local grobid server instead of a public grobid server (https://kermitt2-grobid.hf.space).
 
 ```bash
-python3 text2knowledge.py pdf2text --pdf-file ../examples/pdf2json/pdfs/16451124.pdf --output-dir ../examples/pdf2json/extracted_pdfs/ --grobid-url https://kermitt2-grobid.hf.space
+python3 extract.py pdf2text --grobid-url https://kermitt2-grobid.hf.space --pdf-dir ./examples/antibody/pdfs --output-dir ./examples/antibody/extracted_pdfs/
+
+# or 
+
+python3 extract.py pdf2text --grobid-url http://localhost:8070 --pdf-dir ./examples/antibody/pdfs --output-dir ./examples/antibody/extracted_pdfs/
 ```
 
 After running the above command, you will get the following files:
 
 ```bash
-examples/pdf2json/extracted_pdfs/16451124
+examples/antibody/extracted_pdfs/16451124
     |-- 16451124.json               # Abstract and body text
     |-- pdf                         # Original pdf, just for convenience
     |   |-- 16451124.pdf
@@ -49,6 +53,12 @@ examples/pdf2json/extracted_pdfs/16451124
     |   |-- 16451124-Figure5-1.png
     |-- data
     |   |-- 16451124.json           # Abstract and body text, same as 16451124.json, just for convenience
+```
+
+### Step 3: Extract text chunks into a json file
+
+```bash
+python3 extract.py text-chunks ./examples/antibody/extracted_pdfs ./examples/antibody/antibody.json
 ```
 
 ## Launch a Chatbot Server for Text2Knowledge

@@ -2,6 +2,7 @@ import scipdf
 import json
 import pathlib
 import os
+from typing import Union
 
 
 def list_pdfs(path):
@@ -22,16 +23,22 @@ def gen_dest_path(pdf_file, output_dir):
 
 def extract_fulltext(
     pdf_file, output_dir, grobid_url="https://kermitt2-grobid.hf.space"
-):
+) -> Union[None, str]:
     output_path, basename = gen_dest_path(pdf_file, output_dir)
     output_file = os.path.join(output_path, basename + ".json")
     os.makedirs(output_path, exist_ok=True)
     if os.path.exists(output_file):
         print("Output file (%s) already exists. Skipping..." % output_file)
+        return None
     else:
-        article_dict = scipdf.parse_pdf_to_dict(pdf_file, grobid_url=grobid_url)
-        with open(output_file, "w") as f:
-            json.dump(article_dict, f, indent=4)
+        try:
+            article_dict = scipdf.parse_pdf_to_dict(pdf_file, grobid_url=grobid_url)
+            with open(output_file, "w") as f:
+                json.dump(article_dict, f, indent=4)
+            return output_file
+        except Exception as e:
+            print("Error processing %s: %s" % (pdf_file, e))
+            return None
 
 
 def extract_figures(pdf_file, output_dir):
@@ -45,7 +52,7 @@ def extract_figures(pdf_file, output_dir):
     else:
         os.makedirs(pdf_dir, exist_ok=True)
         # Copy pdf to output folder
-        os.system("cp %s %s" % (pdf_file, pdf_dir))
+        os.system("cp '%s' '%s'" % (pdf_file, pdf_dir))
 
     if os.path.exists(datafile):
         print("Data file (%s) already exists. Skipping..." % datafile)
