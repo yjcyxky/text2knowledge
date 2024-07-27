@@ -94,7 +94,8 @@ def find_topn_chunks(
             return
 
         which_papers = results["filename"].unique()
-        topn_papers_dir = os.path.join(os.path.dirname(output_file), "topn_papers")
+        subdir = "topn_papers" if not use_cohere else "topn_papers_cohere"
+        topn_papers_dir = os.path.join(os.path.dirname(output_file), subdir)
         if os.path.exists(topn_papers_dir):
             raise FileExistsError(f"{topn_papers_dir} already exists.")
 

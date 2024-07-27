@@ -7,11 +7,24 @@ from pathlib import Path
 import pandas as pd
 import torch
 import os
+import logging
 import torch.nn.functional as F
 import pickle
 from typing import List, Dict, Any, Tuple, Optional, Union
 from dataclasses import dataclass
 import cohere
+
+
+def init_logger(name):
+    logger = logging.getLogger(name)
+    # Set the logging format, only print the message
+    formatter = logging.Formatter("%(message)s")
+    handler = logging.StreamHandler()
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    return logger
 
 
 class EmbeddingGenerator:

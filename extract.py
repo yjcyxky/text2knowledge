@@ -69,7 +69,7 @@ def extract_sentences(input_dir: str, output_file: str, sentence_size: int):
 
     print(f"Saving sentences to {output_file}...")
     df = pd.DataFrame(text_chunks)
-    df.to_json(output_file, orient="records", lines=False)
+    df.to_json(output_file, orient="records", lines=False, force_ascii=False)
 
 
 def extract_chunks(input_dir: str, output_file: str, chunk_size: int):
@@ -106,7 +106,7 @@ def extract_chunks(input_dir: str, output_file: str, chunk_size: int):
             )
 
     df = pd.DataFrame(text_chunks)
-    df.to_json(output_file, orient="records", lines=False)
+    df.to_json(output_file, orient="records", lines=False, force_ascii=False)
 
 
 def extract_sections(input_dir: str, output_file: str):
@@ -139,7 +139,7 @@ def extract_sections(input_dir: str, output_file: str):
             )
 
     df = pd.DataFrame(text_chunks)
-    df.to_json(output_file, orient="records", lines=False)
+    df.to_json(output_file, orient="records", lines=False, force_ascii=False)
 
 
 @cli.command(

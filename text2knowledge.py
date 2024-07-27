@@ -1,13 +1,15 @@
 import click
 import os
 import json
-from text2knowledge.utils import get_valid_entities
-from text2knowledge.strategy1 import extract_concepts, graph_prompt
+import logging
+from text2knowledge.utils import get_valid_entities, init_logger
+from text2knowledge.strategy1 import extract_concepts, graph_prompt, classify
 from text2knowledge.strategy2 import gen_text_template, gen_all_questions, gen_answer_question_template
 
+logging.basicConfig(level=logging.WARNING)
+logger = init_logger(__name__)
 
 cli = click.Group()
-
 
 @cli.command(help="Extract biomedical entities from a given text.")
 @click.option(
@@ -173,6 +175,68 @@ def extract_relationships_1(text_file: str, model_name: str, metadata: str, outp
 #     print("All possible items: %s\n\n" % all_possible_items)
 #     questions = gen_all_questions(all_possible_items)
 #     print(gen_answer_question_template(questions, abstract))
+
+
+@cli.command(
+    help="Classify the given text into a specific category using the model."
+)
+@click.option(
+    "--input-file",
+    "-i",
+    help="A json file which contains a list of texts.",
+    required=True,
+    type=click.Path(exists=True, file_okay=True, dir_okay=False),
+)
+@click.option(
+    "--output-file",
+    "-o",
+    help="Output file.",
+    required=True,
+    type=click.Path(exists=False, file_okay=True, dir_okay=False),
+)
+@click.option(
+    "--model-name",
+    "-m",
+    help="Model name. You can use any model which supported by ollama.ai. If you don't know which models are available, you can use the command `ollama list` to list all installed models or visit https://ollama.ai/library. Default: mistral-openorca:latest",
+    default="mistral-openorca:latest",
+)
+def classify_text(input_file: str, output_file: str, model_name: str):
+    if not os.path.exists(input_file):
+        raise FileNotFoundError(f"The {input_file} file does not exist.")
+    
+    if os.path.exists(output_file):
+        logger.info("The output file exists, so we will load the previous outputs.")
+        with open(output_file, "r") as f:
+            outputs = json.load(f)
+    else:
+        outputs = []
+
+    processed_titles = set([o.get("title") for o in outputs])
+    with open(input_file, "r") as f:
+        data = json.load(f)
+        for idx, d in enumerate(data):
+            title = d.get("title", "")
+
+            if title in processed_titles:
+                logger.info(f"Classifying the {idx + 1}th / {len(data)} text: {title} has been processed, so we skip it.")
+                continue
+
+            abstract = d.get("abstract", "")
+            text = f"{title}\n{abstract or 'No abstract found.'}"
+            logger.info(f"Classifying the {idx + 1}th / {len(data)} text: {title}")
+            outputs.append(classify(text, model=model_name))
+
+            if idx > 0 and idx % 10 == 0:
+                with open(output_file, "w") as f:
+                    outputs_str = json.dumps(outputs, indent=4)
+                    f.write(outputs_str)
+
+    if outputs:
+        with open(output_file, "w") as f:
+            outputs_str = json.dumps(outputs, indent=4)
+            f.write(outputs_str)
+    else:
+        logger.info(f"No valid outputs found for the {input_file} file.")
 
 
 if __name__ == "__main__":
