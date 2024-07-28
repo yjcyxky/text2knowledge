@@ -3,8 +3,7 @@ import os
 import json
 import logging
 from text2knowledge.utils import get_valid_entities, init_logger
-from text2knowledge.strategy1 import extract_concepts, graph_prompt, classify
-from text2knowledge.strategy2 import gen_text_template, gen_all_questions, gen_answer_question_template
+from text2knowledge.strategy1 import extract_entities as extract_entities_from_text, extract_relations as extract_relations_from_text, classify_article as classify_article_from_text
 
 logging.basicConfig(level=logging.WARNING)
 logger = init_logger(__name__)
@@ -81,7 +80,9 @@ Your review should be thorough, ensuring the final extraction results are both a
                 print(f"Entities found in the {text_file} file, so we will skip the extraction.")
                 return
 
-        entities = extract_concepts(abstract, model=model_name, metadata=metadata)
+        entities = extract_entities_from_text(
+            abstract, model=model_name, metadata=metadata
+        )
 
     if entities:
         with open(output_file, "w") as f:
@@ -118,7 +119,7 @@ Your review should be thorough, ensuring the final extraction results are both a
     type=click.Path(exists=False, file_okay=False, dir_okay=False),
     help="A metadata file which contains a json object. Such as {'source': 'pubmed', 'pmid': '123456', 'type': 'abstract', ...}, you can specify any key-value pairs you want.",
 )
-def extract_relationships_1(text_file: str, model_name: str, metadata: str, output_file: str):
+def extract_relations(text_file: str, model_name: str, metadata: str, output_file: str):
     if metadata and os.path.exists(metadata):
         with open(metadata, "r") as f:
             metadata = f.read()
@@ -127,7 +128,9 @@ def extract_relationships_1(text_file: str, model_name: str, metadata: str, outp
 
     with open(text_file, "r") as f:
         text = f.read()
-        relations = graph_prompt(text, model=model_name, metadata=metadata)
+        relations = extract_relations_from_text(
+            text, model=model_name, metadata=metadata
+        )
 
     if relations:
         with open(output_file, "w") as f:
@@ -135,46 +138,6 @@ def extract_relationships_1(text_file: str, model_name: str, metadata: str, outp
             f.write(relations_str)
     else:
         print(f"No relations found for the {text_file} file.")
-
-
-# @cli.command(
-#     help="Extract relationships between biomedical entities from a given abstract using strategy 2."
-# )
-# @click.option(
-#     "--abstract-file",
-#     "-a",
-#     help="Abstract file which contains a paragraph.",
-#     required=True,
-#     type=click.Path(exists=True, file_okay=True, dir_okay=False),
-# )
-# @click.option(
-#     "--input-file",
-#     "-i",
-#     help="Input file which contains a list of biomedical entities.",
-#     required=True,
-#     type=click.Path(exists=True, file_okay=True, dir_okay=False),
-# )
-# def extract_relationships_2(input_file: str, abstract_file: str):
-#     with open(input_file, "r") as f:
-#         items = f.readlines()
-
-#     with open(abstract_file, "r") as f:
-#         abstract = f.read()
-
-#     items = list(
-#         filter(lambda x: len(x) > 0, [item.strip() for item in items])
-#     )  # remove empty lines and strip the spaces
-
-#     valid_items = filter(
-#         lambda x: len(x) > 0, get_valid_entities(items, topk=1, min_score=0.8)
-#     )
-
-#     print("Valid items: %s\n\n" % get_valid_entities(items, topk=5, min_score=0.5))
-
-#     all_possible_items = [i[0].raw_name for i in valid_items]
-#     print("All possible items: %s\n\n" % all_possible_items)
-#     questions = gen_all_questions(all_possible_items)
-#     print(gen_answer_question_template(questions, abstract))
 
 
 @cli.command(
@@ -200,10 +163,10 @@ def extract_relationships_1(text_file: str, model_name: str, metadata: str, outp
     help="Model name. You can use any model which supported by ollama.ai. If you don't know which models are available, you can use the command `ollama list` to list all installed models or visit https://ollama.ai/library. Default: mistral-openorca:latest",
     default="mistral-openorca:latest",
 )
-def classify_text(input_file: str, output_file: str, model_name: str):
+def classify_article(input_file: str, output_file: str, model_name: str):
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"The {input_file} file does not exist.")
-    
+
     if os.path.exists(output_file):
         logger.info("The output file exists, so we will load the previous outputs.")
         with open(output_file, "r") as f:
@@ -224,7 +187,7 @@ def classify_text(input_file: str, output_file: str, model_name: str):
             abstract = d.get("abstract", "")
             text = f"{title}\n{abstract or 'No abstract found.'}"
             logger.info(f"Classifying the {idx + 1}th / {len(data)} text: {title}")
-            outputs.append(classify(text, model=model_name))
+            outputs.append(classify_article_from_text(text, model=model_name))
 
             if idx > 0 and idx % 10 == 0:
                 with open(output_file, "w") as f:

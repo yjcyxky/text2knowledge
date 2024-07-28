@@ -78,6 +78,13 @@ After you launch the Ollama server, you can open the following link in your brow
 http://127.0.0.1:11434/api/tags
 
 
+## Article Classification
+
+```bash
+python3 text2knowledge.py classify-article --input-file ./classfication/example.json --output-file ./classfication/results/mixtral_8x22b.json -m mixtral:8x22b
+```
+
+
 ## Text to Knolwedge Graph
 ### Strategy 1: Employ a LLM to extract entities and relations directly
 
@@ -92,7 +99,7 @@ python3 text2knowledge.py extract-entities --text-file examples/text2knowledge/a
 If you want to extract all relations from the text, you can use the following command.
 
 ```bash
-python3 text2knowledge.py extract-relationships-1 --text-file examples/text2knowledge/abstract.txt --output-file examples/text2knowledge/relationships.json --model-name mistral:latest
+python3 text2knowledge.py extract-relations --text-file examples/text2knowledge/abstract.txt --output-file examples/text2knowledge/relationships.json --model-name mistral:latest
 ```
 
 #### Issues
@@ -104,7 +111,7 @@ python3 text2knowledge.py extract-relationships-1 --text-file examples/text2know
 - [ ] How to align all entities to the ontology items? Such as `Hepatocellular carcinoma` --> `MONDO:0007256`. You can access the [BioPortal](https://bioportal.bioontology.org/) for learning more about the ontology items.
 
 
-### Strategy 2: Employ a LLM to extract entities and relations by asking choice questions
+### Strategy 2: Employ a LLM to extract entities and relations by asking choice questions [Not Ready Yet]
 
 #### Introduction
 

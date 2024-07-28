@@ -15,7 +15,7 @@ from dataclasses import dataclass
 import cohere
 
 
-def init_logger(name):
+def init_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
     # Set the logging format, only print the message
     formatter = logging.Formatter("%(message)s")

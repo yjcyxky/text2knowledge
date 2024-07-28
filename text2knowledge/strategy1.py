@@ -1,3 +1,4 @@
+import re
 import json
 import logging
 import text2knowledge.ollama.client as client
@@ -10,65 +11,114 @@ from text2knowledge.utils import init_logger
 
 logger = init_logger(__name__)
 
-def extract_concepts(prompt: str, metadata={}, model="mistral-openorca:latest"):
-    response, _ = client.generate(model_name=model, system=ENTITY_EXTRACTION_PROMPT_TEMPLATE, prompt=prompt)
-    # prompt = f"{ENTITY_EXTRACTION_PROMPT_TEMPLATE}\n\n{prompt}"
-    # response, _ = client.generate(model_name=model, prompt=prompt, options={
-    #     "temperature": 0.6,
-    # })
+
+def extract_json(text: str) -> dict | None:
+    # Using a regular expression to extract JSON strings from the provided text
+    json_pattern = re.compile(r"\{.*?\}", re.DOTALL)
+    matches = json_pattern.findall(text)
+
+    if matches:
+        # Try to load the first JSON string found in the text
+        try:
+            json_data = json.loads(matches[0])
+            return json_data
+        except json.JSONDecodeError:
+            return None
+    else:
+        return None
+
+
+def extract_entities(
+    prompt: str,
+    metadata={},
+    model="mistral-openorca:latest",
+    use_system=False,
+    options={},
+):
+    if use_system:
+        response, _ = client.generate(
+            model_name=model,
+            system=ENTITY_EXTRACTION_PROMPT_TEMPLATE,
+            prompt=prompt,
+            options=options,
+        )
+    else:
+        prompt = f"{ENTITY_EXTRACTION_PROMPT_TEMPLATE}\n\n{prompt}"
+        response, _ = client.generate(model_name=model, prompt=prompt, options=options)
+
     try:
-        result = json.loads(response)
-        result = [dict(item, **metadata) for item in result]
+        data = extract_json(str(response))
+        if data is None:
+            raise Exception("The response is not a JSON object.")
+        else:
+            return [dict(item, **metadata) for item in data]
     except:
-        print("\n\nERROR ### Here is the buggy response: ", response, "\n\n")
-        print("If you get `404 Client Error: Not Found`, please check if the model name is correct or you have installed the model. If you get `500 Server Error: Internal Server Error`, please check if the model is running.")
-        result = None
-    return result
+        msg = f"ERROR ### Here is the buggy response: {response}"
+        logger.info(msg)
+        return {
+            "error": msg,
+            "metadata": metadata
+        }
 
 
-def graph_prompt(input: str, metadata={}, model="mistral-openorca:latest"):
+def extract_relations(input: str, metadata={}, model="mistral-openorca:latest", use_system=False, options={}):
     if model == None:
         model = "mistral-openorca:latest"
 
-    # model_info = client.show(model_name=model)
-    # print( chalk.blue(model_info))
+    if use_system:
+        USER_PROMPT = f"context: ```{input}``` \n\n output: "
+        response, _ = client.generate(model_name=model, system=RELATION_EXTRACTION_PROMPT_TEMPLATE, prompt=USER_PROMPT, options=options)
+    else:
+        PROMPT = f"{RELATION_EXTRACTION_PROMPT_TEMPLATE}\n\n{input}"
+        response, _ = client.generate(model_name=model, prompt=PROMPT, options=options)
 
-    # USER_PROMPT = f"context: ```{input}``` \n\n output: "
-    # response, _ = client.generate(model_name=model, system=RELATION_EXTRACTION_PROMPT_TEMPLATE, prompt=USER_PROMPT)
-
-    USER_PROMPT = f"context: ```{input}``` \n\n output: "
-    response, _ = client.generate(
-        model_name=model, prompt=USER_PROMPT, system=RELATION_EXTRACTION_PROMPT_TEMPLATE
-    )
     try:
-        result = json.loads(response)
-        result = [dict(item, **metadata) for item in result]
+        data = extract_json(str(response))
+        if data is None:
+            raise Exception("The response is not a JSON object.")
+        else:
+            return [dict(item, **metadata) for item in data]
     except:
-        print("\n\nERROR ### Here is the buggy response: ", response, "\n\n")
-        result = None
-    return result
+        msg = f"ERROR ### Here is the buggy response: {response}"
+        logger.warning(msg)
+        return {
+            "error": msg,
+            "metadata": metadata
+        }
 
 
-def classify(input: str, model="mistral-openorca:latest") -> dict:
+def classify_article(input: str, model="mistral-openorca:latest", use_system=False, options={}):
     if model == None:
         model = "mistral-openorca:latest"
 
-    # input = f'{CLASSIFICATION_PROMPT_TEMPLATE}\n```{input}```'
-    # response, _ = client.generate(model_name=model, prompt=input)
+    if use_system:
+        input = f"```{input}```"
+        response, _ = client.generate(
+            model_name=model,
+            system=CLASSIFICATION_PROMPT_TEMPLATE,
+            prompt=input,
+            options=options,
+        )
+    else:
+        input = f'{CLASSIFICATION_PROMPT_TEMPLATE}\n```{input}```'
+        response, _ = client.generate(model_name=model, prompt=input, options=options)
+
     logger.debug(f"{input}\n")
-    response, _ = client.generate(model_name=model, prompt=f"```{input}```", system=CLASSIFICATION_PROMPT_TEMPLATE)
-
     title = input.split("\n")[0].strip()
     abstract = input.split("\n")[1].strip()
 
     try:
-        data = json.loads(response)
-        return {
-            "category": data["category"],
-            "title": title,
-            "abstract": abstract,
-            "reason": data["reason"],
-        }
+        data = extract_json(str(response))
+        if data is None:
+            raise Exception("The response is not a JSON object.")
+        else:
+            return {
+                "category": data["category"],
+                "title": title,
+                "abstract": abstract,
+                "reason": data["reason"],
+                "response": response,
+            }
     except Exception as e:
         msg = f"\n\nERROR ### Here is the buggy response: {response}"
         logger.info(msg)

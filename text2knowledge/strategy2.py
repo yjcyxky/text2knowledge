@@ -59,3 +59,42 @@ def gen_answer_question_template(questions: List[Question], input_text: str) -> 
 
 {formatted_question_str}
 """
+
+# @cli.command(
+#     help="Extract relationships between biomedical entities from a given abstract using strategy 2."
+# )
+# @click.option(
+#     "--abstract-file",
+#     "-a",
+#     help="Abstract file which contains a paragraph.",
+#     required=True,
+#     type=click.Path(exists=True, file_okay=True, dir_okay=False),
+# )
+# @click.option(
+#     "--input-file",
+#     "-i",
+#     help="Input file which contains a list of biomedical entities.",
+#     required=True,
+#     type=click.Path(exists=True, file_okay=True, dir_okay=False),
+# )
+# def extract_relationships_2(input_file: str, abstract_file: str):
+#     with open(input_file, "r") as f:
+#         items = f.readlines()
+
+#     with open(abstract_file, "r") as f:
+#         abstract = f.read()
+
+#     items = list(
+#         filter(lambda x: len(x) > 0, [item.strip() for item in items])
+#     )  # remove empty lines and strip the spaces
+
+#     valid_items = filter(
+#         lambda x: len(x) > 0, get_valid_entities(items, topk=1, min_score=0.8)
+#     )
+
+#     print("Valid items: %s\n\n" % get_valid_entities(items, topk=5, min_score=0.5))
+
+#     all_possible_items = [i[0].raw_name for i in valid_items]
+#     print("All possible items: %s\n\n" % all_possible_items)
+#     questions = gen_all_questions(all_possible_items)
+#     print(gen_answer_question_template(questions, abstract))
