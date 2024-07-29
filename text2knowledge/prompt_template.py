@@ -66,7 +66,7 @@ Remember, adherence to the category list is non-negotiable. Continuous refinemen
 """
 
 def make_entity_extraction_prompt(text: str | None) -> str:
-    prompt = """The Biomedical Entity Extractor is designed to identify and categorize entities from biomedical literature abstracts, removing irrelevant words while preserving semantic context. It marks words or phrases representing specific biomedical concepts and categorizes them. Extracting entities from the text as fully as possible even if the accuracy is not high.
+    prompt = """The Biomedical Entity Extractor is designed to identify and categorize entities from biomedical literature abstracts, removing irrelevant words while preserving semantic context. It marks words or phrases representing specific biomedical concepts and categorizes them. Extracting entities from the text as fully as possible even if the accuracy is not high. If a document does not fit any of the given categories, it will output 'Unknown.' For each provided paper title and abstract, which will be enclosed in triple backticks (```).
 
     Output Structure:
     The output is a JSON object with the following fields:
