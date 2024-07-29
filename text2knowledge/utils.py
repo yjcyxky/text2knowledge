@@ -27,6 +27,8 @@ def init_logger(name: str) -> logging.Logger:
     return logger
 
 
+logger = init_logger(__name__)
+
 class EmbeddingGenerator:
     """Embedding generator."""
 
@@ -115,6 +117,7 @@ class EmbeddingGenerator:
         Raises:
             ValueError: If model or tokenizer is None.
         """
+        logger.info("Generate embedding for text: %s" % text)
         if not self.tokenizer or not self.model:
             raise ValueError("Failed to load model or tokenizer.")
 

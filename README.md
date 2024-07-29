@@ -1,10 +1,21 @@
 ## Installation
 
+### Requirements
+
+Install the ollama for managing all LLM models, you can follow the instructions in the ollama website (https://ollama.ai/) to install the ollama
+
+
+### Install Text2Knowledge
+
 ```bash
 conda create -n text2knowledge python=3.10 openjdk=11
 
 git clone https://github.com/yjcyxky/text2knowledge.git
+
+cd text2knowledge
+pip install -r requirements.txt
 ```
+
 
 ## Pdf to Text
 ### Step 1: Launch the grobid server
@@ -61,31 +72,16 @@ examples/antibody/extracted_pdfs/16451124
 python3 extract.py text-chunks ./examples/antibody/extracted_pdfs ./examples/antibody/antibody.json
 ```
 
-## Launch a Chatbot Server for Text2Knowledge
-
-Read the [README.md](chatbot/README.md) in the `chatbot` folder for more detail [Not Ready Yet]. So you can use another open source project [Ollama](https://ollama.ai/) or [Ollama Github](https://github.com/jmorganca/ollama) instead of our chatbot.
-
-After you install the Ollama, you can run the following command to launch the Ollama server.
-
-```bash
-ollama pull mistral-openorca:latest
-
-ollama serve
-```
-
-After you launch the Ollama server, you can open the following link in your browser to show all the availabel models.
-
-http://127.0.0.1:11434/api/tags
 
 
-## Article Classification
+## Text to Knolwedge Graph
+
+### Article Classification
 
 ```bash
 python3 text2knowledge.py classify-article --input-file ./classfication/example.json --output-file ./classfication/results/mixtral_8x22b.json -m mixtral:8x22b
 ```
 
-
-## Text to Knolwedge Graph
 ### Strategy 1: Employ a LLM to extract entities and relations directly
 
 Please refer to [Prompts](./text2knowledge/prompt_template.py) for more details.
@@ -130,6 +126,42 @@ A new solution to convert text to knowledge graph
 2. Select the most suitable similarity algorithm
 3. Select a suitable re-ranking algorithm
 4. Improve the prompts for generating questions based on the characteristics of the large language model
+
+## Launch a Chatbot Server for Text2Knowledge
+
+NOTE: Read the [README.md](chatbot/README.md) in the `chatbot` folder for more detail [Not Ready Yet]. Or you can use another open source project [Ollama](https://ollama.ai/) or [Ollama Github](https://github.com/jmorganca/ollama) instead of our chatbot.
+
+After you install the Ollama, you can run the following command to pull the models and launch the Ollama server.
+
+### Pull the models
+
+```bash
+ollama pull mistral-openorca:latest
+
+# or
+bash pull_models.sh
+```
+
+### Launch the Ollama server
+
+This step might not a required step for you. If you have installed the Ollama in macosx, you can also click the `Ollama` icon in the application folder to launch the Ollama server.
+
+```bash
+ollama serve
+```
+
+After you launch the Ollama server, you can open the following link in your browser to show all the availabel models.
+
+http://127.0.0.1:11434/api/tags
+
+### [Optional] Change the storage path
+
+If you have limited storage space in your computer, you can change the storage path to another disk. More details on how to change the storage path, please refer to the [Ollama FAQs](https://github.com/ollama/ollama/blob/main/docs/faq.md#how-do-i-set-them-to-a-different-location).
+
+```bash
+echo 'OLLAMA_MODELS=/path/to/your/disk' >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## Benchmarking
 

@@ -2,15 +2,21 @@ import click
 import os
 import json
 import logging
-from text2knowledge.utils import get_valid_entities, init_logger
-from text2knowledge.strategy1 import extract_entities as extract_entities_from_text, extract_relations as extract_relations_from_text, classify_article as classify_article_from_text
+import pandas as pd
+from text2knowledge.utils import init_logger, EmbeddingGenerator
+from text2knowledge.strategy1 import (
+    extract_entities as extract_entities_from_text,
+    extract_relations as extract_relations_from_text,
+    classify_article as classify_article_from_text,
+    correct_extracted_entities,
+)
 
 logging.basicConfig(level=logging.WARNING)
 logger = init_logger(__name__)
 
 cli = click.Group()
 
-@cli.command(help="Extract biomedical entities from a given text.")
+@cli.command(help="Extract biomedical entities from a given text or a set of texts.")
 @click.option(
     "--text-file",
     "-i",
@@ -43,7 +49,19 @@ cli = click.Group()
     is_flag=True,
     help="Review the entities and make corrections.",
 )
-def extract_entities(text_file: str, output_file: str, model_name: str, metadata: str, review: bool = False):
+@click.option(
+    "--ontology-embedding-file",
+    "-e",
+    type=click.Path(exists=False, file_okay=True, dir_okay=False),
+    help="A file which contains ontology embeddings, which is a biomedgps-format file but with an embedding column.",
+)
+@click.option(
+    "--embedding-model-name",
+    "-n",
+    help="Embedding model name. Default: mistralai/Mistral-7B-v0.1",
+    default="mistralai/Mistral-7B-v0.1",
+)
+def extract_entities(text_file: str, output_file: str, model_name: str, metadata: str, review: bool = False, ontology_embedding_file: str | None = None, embedding_model_name: str = "mistralai/Mistral-7B-v0.1"):
     print("Extracting entities using the model %s..." % model_name)
     if metadata and os.path.exists(metadata):
         with open(metadata, "r") as f:
@@ -51,40 +69,61 @@ def extract_entities(text_file: str, output_file: str, model_name: str, metadata
     else:
         metadata = {} # type: ignore
 
-    with open(text_file, "r") as f:
-        abstract = f.read()
-        abstract = f"USER: {abstract} ASSISTANT: "
-
+    def extract(text):
         if os.path.exists(output_file):
             if review:
                 entities = json.load(open(output_file))
 
                 if entities:
-                    print(f"Entities found in the {text_file} file, so we will review them.")
-                    print(f"Previous entities: {entities}\n")
-                    abstract = f"""
-{abstract}
-
-The following entities are extracted by your previous run:
-{entities}
-
-Please carefully review the previously extracted results, following these steps:
-1. Verify that each entity extracted aligns precisely with the designated categories. Ensure that the categorization is strict and appropriate.
-2. Confirm that all entities listed under each category accurately match the category's criteria.
-3. Assess the confidence scores assigned to each extraction. Consider the accuracy and relevance of the entity to its category, adjusting the scores to more accurately reflect the confidence level.
-4. If you identify any discrepancies, inaccuracies, or misalignments with the categories, please correct them. Use the same format as the original extraction to present your corrections.
-
-Your review should be thorough, ensuring the final extraction results are both accurate and logically structured according to the outlined categories.
-"""
+                    print(
+                        f"Entities found in the {text_file} file, so we will review them."
+                    )
+                    entities = correct_extracted_entities(
+                        text=text,
+                        model=model_name,
+                        metadata=metadata,
+                        entities=entities,
+                        is_list=True,
+                    )
+                else:
+                    print(
+                        f"No entities found for the {text_file} file, please extract the entities first."
+                    )
+                    return
             else:
-                print(f"Entities found in the {text_file} file, so we will skip the extraction.")
+                print(
+                    f"Entities found in the {text_file} file, so we will skip the extraction."
+                )
                 return
+        else:
+            if ontology_embedding_file and os.path.exists(ontology_embedding_file):
+                df = pd.read_csv(ontology_embedding_file, sep="\t")
+                df["embedding"] = df["embedding"].apply(
+                    lambda x: [float(i) for i in x.split("|")]
+                )
+            else:
+                df = None
 
-        entities = extract_entities_from_text(
-            abstract, model=model_name, metadata=metadata
-        )
+            entities = extract_entities_from_text(
+                text,
+                model=model_name,
+                metadata=metadata,
+                embeddings=df,
+                embedding_model_name=embedding_model_name,
+            )
+
+        return entities
+
+    if os.path.dirname(output_file) and not os.path.exists(os.path.dirname(output_file)):
+        os.makedirs(os.path.dirname(output_file))
+
+    with open(text_file, "r") as f:
+        text = f.read()
+
+    entities = extract(text)
 
     if entities:
+        output_file = output_file if not review else output_file.replace(".json", "_reviewed.json")
         with open(output_file, "w") as f:
             entities_str = json.dumps(entities, indent=4)
             f.write(entities_str)
@@ -201,6 +240,42 @@ def classify_article(input_file: str, output_file: str, model_name: str):
     else:
         logger.info(f"No valid outputs found for the {input_file} file.")
 
+
+@cli.command(
+    help="Generate embeddings for the given entities using the model."
+)
+@click.option(
+    "--input-file",
+    "-i",
+    help="A tsv file which contains a list of entities.",
+    required=True,
+    type=click.Path(exists=True, file_okay=True, dir_okay=False),
+)
+@click.option(
+    "--output-file",
+    "-o",
+    help="Output file.",
+    required=True,
+    type=click.Path(exists=False, file_okay=True, dir_okay=False),
+)
+@click.option(
+    "--model-name",
+    "-m",
+    help="Model name.",
+    default="mistralai/Mistral-7B-v0.1",
+)
+def generate_embeddings(input_file: str, output_file: str, model_name: str):
+    if not os.path.exists(input_file):
+        raise FileNotFoundError(f"The {input_file} file does not exist.")
+
+    with open(input_file, "r") as f:
+        entities_df = pd.read_csv(f, sep="\t")
+        embedding_generator = EmbeddingGenerator(model_name=model_name)
+        entities_df["embedding"] = entities_df["name"].apply(lambda x: embedding_generator.gen_text_embedding(x).tolist())
+        entities_df["embedding"] = entities_df["embedding"].apply(lambda x: "|".join([str(i) for i in x]))
+
+    if entities_df is not None:
+        entities_df.to_csv(output_file, sep="\t", index=False)
 
 if __name__ == "__main__":
     # Add the directory which contains this file to the python path
