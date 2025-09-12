@@ -211,7 +211,7 @@ def make_classification_prompt(text: str | None) -> str:
     Clinical Test Index Study: The abstract should mention research on specific clinical test indices (e.g., blood indices, imaging tests). It should detail the relationship between these indices and diseases or health status, describing study subjects, testing methods, and results. Key points include the rationale for the test, methods of measurement, and significant correlations or predictive values identified.
     Case Report: The abstract should describe detailed reports of a single or a few cases, highlighting unique clinical presentations, diagnostic challenges, treatment approaches, and outcomes. It should emphasize the novelty and educational value of the cases.
     Meta-Analysis: The abstract should mention a statistical analysis that combines the results of multiple studies addressing a set of related research hypotheses. It should outline the objectives, methods for selecting studies, statistical techniques used, and summary of findings.
-    Unknown: If the text does not fit any of the above categories, it must be classified as 'Unknown.' This category serves as a catch-all for papers that do not conform to standard formats or for new and emerging types of studies that have not yet been categorized.
+    Unknown: If the text does not fit any of the above categories, it must be classified as 'Unknown'. This category serves as a catch-all for papers that do not conform to standard formats or for new and emerging types of studies that have not yet been categorized.
 
     Example Output:
     [
